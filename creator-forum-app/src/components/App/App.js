@@ -23,7 +23,6 @@ class App extends React.Component {
       })
     }
   }
-}
 
 register = (user) => {
   UserApi.register(user)
@@ -88,9 +87,8 @@ render() {
       />
       {/* <Footer /> */}
     </div>
-  )
+  );
+  }
 }
-
-
 
 export default App;
