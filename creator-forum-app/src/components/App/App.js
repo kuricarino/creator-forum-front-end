@@ -75,7 +75,7 @@ logout = () => {
 
 render() {
   return (
-    <div className="App">
+    <section className="hero is-primary is-medium">
       <Header 
         logout={this.logout}
         user={this.state.user}
@@ -85,8 +85,8 @@ render() {
         login={this.login}
         register={this.register}
       />
-      {/* <Footer /> */}
-    </div>
+      <Footer />
+    </section>
   );
   }
 }
