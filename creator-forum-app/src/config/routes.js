@@ -16,16 +16,18 @@ const Routes = (props) => {
                 path='/profile'
                 render={
                     () => props.user ?
-                        <Redirect to='/login'/>
-                    :
+                        // if logged in
                         <Profile user={props.user}/>
+                    :
+                        // if not logged in
+                        <Redirect to='/login'/>
                 }
             />
             <Route
                 path='/register'
                 render={
                     () => props.user ?
-                            <Redirect to="/" /> // need to change to redirect to profile page
+                            <Redirect to="/profile" /> // need to change to redirect to profile page
                         :
                             <Register register={props.register} />
                 }
@@ -34,7 +36,7 @@ const Routes = (props) => {
                 path='/login'
                 render={
                     () => props.user ?
-                            <Redirect to="/" /> // need to change to redirect to profile page
+                            <Redirect to="/profile" /> // need to change to redirect to profile page
                         :
                             <Login login={props.login} />
                 }

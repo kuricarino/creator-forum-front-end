@@ -33,7 +33,7 @@ const Header = (props) => {
                         : <div className="navbar-end">
                             {/* <a className="navbar-item"><Link to='/login'>Login</Link></a>
                             <a className="navbar-item"><Link to='/register'>Sign Up</Link></a> */}
-                            {/* <Link to='/login'>Login</Link> */}
+                            <Link to='/login'>Login</Link>
                             <Link to='/register'>Sign Up</Link>
                             {/* <Switch>
                                 <Route path="/login" login={props.login} component={ Register } />

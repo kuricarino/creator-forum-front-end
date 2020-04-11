@@ -79,13 +79,12 @@ render() {
   return (
     <section className="hero is-primary is-medium">
       <Header 
-        login={this.login}
         logout={this.logout}
         user={this.state.user}
       />
       <Routes 
         user={this.state.user}
-        // login={this.login}
+        login={this.login}
         register={this.register}
       />
       <Footer />
