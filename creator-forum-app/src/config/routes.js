@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
-// import Home from '../components/Home/Home';
+import Home from '../components/Home/Home';
+import Profile from '../components/Profile/Profile'
 import Register from '../components/auth/Register/Register';
 import Login from '../components/auth/Login/Login';
 
@@ -10,6 +11,15 @@ const Routes = (props) => {
             <Route
                 exact path='/'
                 component={ Home }
+            />
+            <Route
+                path='/profile'
+                render={
+                    () => props.user ?
+                        <Redirect to='/login'/>
+                    :
+                        <Profile user={props.user}/>
+                }
             />
             <Route
                 path='/register'

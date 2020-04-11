@@ -4,8 +4,8 @@ import './Footer.css';
 const Footer = () => {
     return (
         <div className="hero-foot">
-            <div classNam="container">
-                <p>&copy; ⓚⓤⓡⓘ♡2020</p>
+            <div className="container">
+                <p>&copy;ⓚⓤⓡⓘ♡②⓪②⓪</p>
             </div>
         </div>
     )

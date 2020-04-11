@@ -2,9 +2,11 @@ import React from 'react';
 import jwt_decode from 'jwt-decode';
 import setAuthHeader from '../../utils/setAuthHeader';
 import Header from '../../layout/Header/Header';
+import Footer from '../../layout/Footer/Footer';
 import Routes from '../../config/routes';
 import UserApi from '../../api/UserApi';
 import './App.css';
+
 
 class App extends React.Component {
   state = {
@@ -40,7 +42,7 @@ register = (user) => {
         })
       }
     })
-    .cath(err => console.log(err));
+    .catch(err => console.log(err));
 }
 
 login = (user) => {
@@ -77,12 +79,13 @@ render() {
   return (
     <section className="hero is-primary is-medium">
       <Header 
+        login={this.login}
         logout={this.logout}
         user={this.state.user}
       />
       <Routes 
         user={this.state.user}
-        login={this.login}
+        // login={this.login}
         register={this.register}
       />
       <Footer />
