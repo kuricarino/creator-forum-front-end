@@ -12,7 +12,12 @@ const login = (user) => {
         .then(res => res);
 }
 
+const show = (id) => {
+    return axios.get(endpoint+'/users/'+id);
+}
+
 export default {
     register,
-    login
+    login,
+    show
 }

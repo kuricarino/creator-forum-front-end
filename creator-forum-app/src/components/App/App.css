@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,10 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.hero.is-primary.is-fullheight {
+  background: url(../../images/paint-darker.jpg) no-repeat center center fixed;
+  background-size: cover;
 }

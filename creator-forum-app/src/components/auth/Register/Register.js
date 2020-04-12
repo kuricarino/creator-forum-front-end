@@ -1,7 +1,8 @@
 import React from 'react';
 
 class Register extends React.Component {
-    state ={
+    state =
+    {
         firstName: '',
         lastName: '',
         username: '',
@@ -19,7 +20,10 @@ class Register extends React.Component {
         // console.log('do you work?')
         e.preventDefault();
         let newUser = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
             username: this.state.username,
+            email: this.state.email, 
             password: this.state.password
         }
         this.props.register(newUser)

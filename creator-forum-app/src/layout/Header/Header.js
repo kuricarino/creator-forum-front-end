@@ -7,11 +7,13 @@ import './Header.css';
 const Header = (props) => {
     return (
         <div className="hero-head">
+        <nav className="navbar has-background-white-bis">
         <div className="container">
             <div className="navbar-brand">
-                {/* <a className="navbar-item"><Link to='/'>Creator Forum</Link>
-                </a> */}
-                <Link to='/'>Creator Forum</Link>
+                <a className="navbar-item" href="/">
+                <img src="https://img.icons8.com/color/96/000000/magritte.png" alt="Creator Forum" width="30" height="28"/>
+                </a>
+                <Link className="navbar-item has-text-black" to='/'>Creator Forum</Link>
                 
                 <span className="navbar-burger burger" data-target="navbarMenuHeroA">
                     <span></span>
@@ -21,31 +23,24 @@ const Header = (props) => {
             </div>
             <div id="navbarMenuHeroA" className="navbar-menu">
                     { //if user logged in, show profile, forum and logout
-                        (props.user)
-                        ? <div className="navbar-end">
+                        (props.user) ? 
+                        <div className="navbar-end">
                             {/* <a className="navbar-item">Profile</a>  */}
-                            <Link to='/profile'>Profile</Link>
+                            <Link className="navbar-item has-text-black" to='/profile'>Profile</Link>
                             {/* <a className="navbar-item"><Link to='/forum'>Forum</Link></a> */}
-                            <a className="navbar-item" onClick={props.logout}>Logout</a>
+                            <Link className="navbar-item has-text-black" onClick={props.logout}>Logout</Link>
                             {/* might need to change onClick above */}
                         </div>
                         // else show login and signup
                         : <div className="navbar-end">
-                            {/* <a className="navbar-item"><Link to='/login'>Login</Link></a>
-                            <a className="navbar-item"><Link to='/register'>Sign Up</Link></a> */}
-                            <Link to='/login'>Login</Link>
-                            <Link to='/register'>Sign Up</Link>
-                            {/* <Switch>
-                                <Route path="/login" login={props.login} component={ Register } />
-                            </Switch>
-                            
-                            <Switch>
-                                <Route path="/register" register={props.register} component={ Register } />
-                            </Switch> */}
+                            <Link className="navbar-item has-text-black" to='/login'>Login</Link>
+                            <Link className="navbar-item has-text-black" to='/register'>Sign Up</Link>
+                            {/* <Link className="navbar-item has-text-black" onClick={props.logout}>Logout</Link> */}
                         </div>
                     }
             </div>
         </div>
+        </nav>
         </div>
     )
 }

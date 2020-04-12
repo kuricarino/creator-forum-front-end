@@ -13,32 +13,30 @@ const Routes = (props) => {
                 component={ Home }
             />
             <Route
-                path='/profile'
-                render={
-                    () => props.user ?
-                        // if logged in
-                        <Profile user={props.user}/>
-                    :
-                        // if not logged in
-                        <Redirect to='/login'/>
-                }
-            />
-            <Route
                 path='/register'
                 render={
-                    () => props.user ?
-                            <Redirect to="/profile" /> // need to change to redirect to profile page
+                    () => props.user ? // if true: redirect to profile, else go to /register
+                            <Redirect to="/profile" user={props.user} />
                         :
-                            <Register register={props.register} />
+                            <Register to="/register" register={props.register}/>
                 }
             />
             <Route 
                 path='/login'
                 render={
-                    () => props.user ?
-                            <Redirect to="/profile" /> // need to change to redirect to profile page
+                    () => props.user ? //if true: redirect to profile, else login
+                            <Redirect to='/profile' user={props.user} />
                         :
-                            <Login login={props.login} />
+                            <Login login={props.login}/>
+                }
+            />
+            <Route
+                path='/profile'
+                render={
+                    () => props.user ? // if true show profile, else login
+                        <Profile user={props.user} />
+                    :
+                        <Login login={props.login} />
                 }
             />
         </Switch>

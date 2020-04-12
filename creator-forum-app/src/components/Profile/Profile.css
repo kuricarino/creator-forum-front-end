@@ -1,0 +1,12 @@
+.tile.is-parent.is-vertical.is-6.notification {
+    margin-top: 5rem;
+    margin-right: 2rem;
+}
+
+.tile.is-parent.is-8.notification {
+    margin-top: 5rem !important;
+}
+
+#profile-photo {
+    margin-bottom: 1rem;
+}

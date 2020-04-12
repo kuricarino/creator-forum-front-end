@@ -6,12 +6,13 @@ import Footer from '../../layout/Footer/Footer';
 import Routes from '../../config/routes';
 import UserApi from '../../api/UserApi';
 import './App.css';
+// import 'bulma/css/bulma.css';
 
 
 class App extends React.Component {
   state = {
-    user: '',
-    id: ''
+    user: {},
+    // id: ''
   }
 
   componentDidMount() {
@@ -20,8 +21,16 @@ class App extends React.Component {
       const decoded = jwt_decode(localStorage.getItem('jwtToken'));
 
       this.setState({
-        user: decoded.username,
-        id: decoded._id
+        user: 
+        {
+          firstName: decoded.firstName,
+          lastName: decoded.lastName,
+          username: decoded.username,
+          email: decoded.email,
+          id: decoded._id 
+        },
+        // user: decoded.username,
+        // id: decoded._id
       })
     }
   }
@@ -37,8 +46,16 @@ register = (user) => {
         const decoded = jwt_decode(token);
 
         this.setState({
-          user: decoded.username,
-          id: decoded._id
+          user: 
+          {
+            firstName: decoded.firstName,
+            lastName: decoded.lastName,
+            username: decoded.username,
+            email: decoded.email,
+            id: decoded._id
+          },
+          // user: decoded.username,
+          // id: decoded._id
         })
       }
     })
@@ -46,6 +63,7 @@ register = (user) => {
 }
 
 login = (user) => {
+  console.log(`user log in`);
   UserApi.login(user)
   .then(res => {
     if (res.status === 200) {
@@ -56,8 +74,16 @@ login = (user) => {
       const decoded = jwt_decode(token);
 
       this.setState({
-        user: decoded.username,
-        id: decoded._id
+        user: 
+        {
+          firstName: decoded.firstName,
+          lastName: decoded.lastName,
+          username: decoded.username,
+          email: decoded.email,
+          id: decoded._id
+        },
+        // user: decoded.username,
+        // id: decoded._id
       })
     }
   })
@@ -65,27 +91,31 @@ login = (user) => {
 }
 
 logout = () => {
+  console.log(`${this.state.user.username} has logged out`);
   localStorage.removeItem('jwtToken');
   //remove header by passing no value 
   setAuthHeader();
 
   this.setState({
     user:'',
-    id:''
+    // id:''
   })
 }
 
 render() {
+  console.log(this.state.user)
   return (
-    <section className="hero is-primary is-medium">
+    <section className="hero is-primary is-fullheight">
       <Header 
         logout={this.logout}
         user={this.state.user}
       />
       <Routes 
         user={this.state.user}
+        // id={this.state.id}
         login={this.login}
         register={this.register}
+        logout={this.logout}
       />
       <Footer />
     </section>
