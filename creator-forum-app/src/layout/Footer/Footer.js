@@ -5,7 +5,9 @@ const Footer = () => {
     return (
         <div className="hero-foot">
             <div className="container">
-                <p>&copy;ⓚⓤⓡⓘ♡②⓪②⓪</p>
+                <p>&copy; ⓚⓤⓡⓘ ♡</p>
+                {/* ⓚⓤⓡⓘ②⓪②⓪ */}
+                {/* ➋⓿➋⓿ */}
             </div>
         </div>
     )

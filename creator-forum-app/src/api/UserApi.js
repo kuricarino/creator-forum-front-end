@@ -12,12 +12,18 @@ const login = (user) => {
         .then(res => res);
 }
 
+const update = (user) => { // id or _id?
+    let request = axios.put(`${endpoint}/users/${user._id}`, user)
+    return request;
+}
+
 const show = (id) => {
-    return axios.get(endpoint+'/users/'+id);
+    return axios.get(`${endpoint}/users/${id}`);
 }
 
 export default {
     register,
     login,
+    update,
     show
 }
