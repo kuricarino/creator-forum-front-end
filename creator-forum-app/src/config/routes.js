@@ -36,7 +36,8 @@ const Routes = (props) => {
                     () => props.user ? // if true show profile, else login
                         <Profile user={props.user} />
                     :
-                        <Login login={props.login} />
+                        // <Login login={props.login} />
+                        <Redirect to='/'/>
                 }
             />
         </Switch>
