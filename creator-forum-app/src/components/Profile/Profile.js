@@ -1,6 +1,7 @@
 import React from 'react';
 import './Profile.css';
 import UserApi from '../../api/UserApi';
+import UploadContainer from '../../containers/UploadContainer/UploadContainer';
 
 class Profile extends React.Component {
     state = {
@@ -123,10 +124,10 @@ class Profile extends React.Component {
                             <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.submitUpdate}>Save Changes</button>
                     </div>
                     {/* another tile for upload container */}
-                    {/* <UploadContainer id={this.state.user._id}/> */}
-                    <div className="tile is-parent is-8 notification">
+                    <UploadContainer id={this.state.user._id}/>
+                    {/* <div className="tile is-parent is-8 notification">
                         <h1 className="title has-text-grey-dark">Your Uploads</h1>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )
