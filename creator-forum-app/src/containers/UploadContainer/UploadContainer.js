@@ -13,7 +13,7 @@ class UploadContainer extends React.Component {
 
     showUploadForm = (event) => {
         // event.preventDefault();
-        console.log('create upload button clicked')
+        console.log('show create form')
         this.setState({
             show: !this.state.show
         });
@@ -79,7 +79,7 @@ class UploadContainer extends React.Component {
                         <div className="content">
                             <p className="title has-text-grey-dark">Your Work</p>
                             <p className="subtitle has-text-grey-dark">Upload your work to the forum</p>
-                            <UploadForm user={this.props.user} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} />
+                            <UploadForm userId={this.props.id} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} />
                             <span className="icon has-text-link is-large" onClick={event => this.showUploadForm()}> 
                             {/* or use has-text-info and change submit button */}
                                 <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
@@ -103,7 +103,7 @@ class UploadContainer extends React.Component {
                     <span className="icon has-text-link is-large" onClick={event => this.showUploadForm()}>
                         <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
                     </span>
-                    <UploadForm user={this.props.user} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} />
+                    <UploadForm userId={this.props.id} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} />
                     </div>
                     </div>
                 </div>

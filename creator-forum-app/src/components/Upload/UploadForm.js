@@ -6,8 +6,7 @@ class UploadForm extends React.Component {
 
     // field validation
 
-
-    submitUpdate = (event) => {
+    submitNewUpload = (event) => {
         event.preventDefault();
         // if (this.validateFields()) {
             UploadApi.uploadCreate({
@@ -15,7 +14,8 @@ class UploadForm extends React.Component {
                 category: document.getElementById('category').value,
                 link: document.getElementById('link').value,
                 body: document.getElementById('body').value,
-                user: this.props.user._id
+                //add privacy toggle for user
+                user: this.props.userId
             })
             .then(res => {
                 // from Upload Container which will re-render container to include new upload
@@ -69,7 +69,7 @@ class UploadForm extends React.Component {
                             </div>
                             {/* </div> */}
                             {/* <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.submitUpdate}>Upload on Forum</button> */}
-                            <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.uploadCreate}>Upload on Forum</button>
+                            <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.submitNewUpload}>Upload on Forum</button>
                     {/* </div> */}
                 </div>
             </div>
