@@ -9,16 +9,19 @@ class UploadContainer extends React.Component {
         uploads: this.props.uploads,
         pathName: '',
         show: false,
+        buttonStyle: true,
     }
 
+    // changes + button to red (would want to have x)
     showUploadForm = (event) => {
-        // event.preventDefault();
-        console.log('show create form')
+        console.log('show/hide blank create form')
         this.setState({
-            show: !this.state.show
+            show: !this.state.show,
+            buttonStyle: !this.state.buttonStyle
         });
     }
 
+    // submits and closes create form
     handleClose = (event) => {
         this.setState({
             show: !this.state.show
@@ -27,7 +30,7 @@ class UploadContainer extends React.Component {
 
     // after creating a new upload or updating an upload
     updateUploadContainer = () => {
-        console.log('UploadApi call');
+        console.log('UploadContainer rendered');
         UploadApi.uploadIndex()
         .then(res => {
                 let userUpload = res.data.filter((upload) => {
@@ -39,6 +42,14 @@ class UploadContainer extends React.Component {
             })}
         );
     }
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     console.log(`shouldComponentUpdate invoked`)
+    //     if (nextProps.uploads && nextProps.uploads !== this.props.uploads) {
+    //         return false;
+    //     }
+    //     return true;
+    // }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps !== this.props) {
@@ -69,6 +80,8 @@ class UploadContainer extends React.Component {
     }
 
     render() {
+        let buttonClass = this.state.buttonStyle ? "icon has-text-link is-large" : "icon has-text-danger is-large"
+        // let buttonDataTransform = this.state.buttonStyle ? "" : "rotate-90"
         let uploads = this.state.uploads;
         if (this.state.pathName === '/profile') {
             // user has no uploads
@@ -80,7 +93,7 @@ class UploadContainer extends React.Component {
                             <p className="title has-text-grey-dark">Your Work</p>
                             <p className="subtitle has-text-grey-dark">Upload your work to the forum</p>
                             <UploadForm userId={this.props.id} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} />
-                            <span className="icon has-text-link is-large" onClick={event => this.showUploadForm()}> 
+                            <span className={buttonClass} onClick={event => this.showUploadForm()}> 
                             {/* or use has-text-info and change submit button */}
                                 <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
                             </span>
@@ -98,9 +111,9 @@ class UploadContainer extends React.Component {
                     <div className="content ">
                     <h1 className="title has-text-grey-dark">Your Work</h1>
                     {uploads && uploads.map(upload => {
-                        return <Upload upload={upload} key={upload._id} user={this.props.user}/>
+                        return <Upload upload={upload} key={upload._id} userId={this.props.id} updateUploadContainer={this.updateUploadContainer}/>
                     })}
-                    <span className="icon has-text-link is-large" onClick={event => this.showUploadForm()}>
+                    <span className={buttonClass} onClick={event => this.showUploadForm()}>
                         <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
                     </span>
                     <UploadForm userId={this.props.id} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} />
