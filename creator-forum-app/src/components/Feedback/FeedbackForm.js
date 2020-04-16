@@ -5,29 +5,48 @@ class FeedbackForm extends React.Component {
 
     // field validation
 
+    // componentDidMount() {
+    //     console.log('feedback container mounted');
+    //     console.log(this.props.upload._id)
+    //     FeedbackApi.feedbackIndex(this.props.upload._id)
+    //     .then(res => {
+    //         console.log(res.data);
+    //         let feedback = res.data.filter((feedback) => {
+    //             // console.log(feedback);
+    //             return feedback.upload === this.props.upload._id
+    //             console.log(feedback);
+    //         })
+    //         // let feedback = res.data;
+    //         // console.log(res);
+    //         feedback.reverse();
+    //         this.setState({
+    //             feedback: feedback,
+    //     })}
+    //     );
+    // }
+
     submitFeedback = (event) => {
-        console.log('feedback posted');
         event.preventDefault();
+        // console.log(this.props.uploadId);
         // if (this.validateFields()) {
-            FeedbackApi.feedbackCreate(this.props.upload._id, {
-                body: document.getElementById('body').value,
-                upload: this.props.upload._id,
+            console.log(document.getElementById(`${this.props.uploadId}`).value);
+            FeedbackApi.feedbackCreate({
+                body: document.getElementById(`${this.props.uploadId}`).value,
+                uploadId: this.props.uploadId,
                 user: this.props.loggedInUser
             })
             .then(res => {
-                // from Upload Container which will re-render container to include new upload
+                console.log('feedback posted on backend');
                 this.props.updateFeedbackContainer();
-                // this.props.closeUpdateForm && this.props.closeUpdateForm(event);
             })
-        // }
-    }
+        }
 
     render() {
         return (
             <div className="container">
                 <div className="field">
                     <div className="control">
-                        <textarea className="input has-text-black" name="body" id="body" type="text" defaultValue="" />
+                        <textarea className="input has-text-black" name="body" id={this.props.uploadId} type="text" defaultValue="" />
                     </div>
                 </div>
                 <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.submitFeedback}>Give Feedback</button>

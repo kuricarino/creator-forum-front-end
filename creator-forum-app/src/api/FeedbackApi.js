@@ -5,8 +5,8 @@ const feedbackIndex = (uploadId) => {
     let request = axios.get(`${endpoint}/uploads/${uploadId}/feedback`)
     return request;
 }
-const feedbackCreate = (uploadId, feedback) => {
-    return axios.post(`${endpoint}/uploads/${uploadId}/feedback`, feedback)
+const feedbackCreate = (feedback) => {
+    return axios.post(`${endpoint}/uploads/${feedback.uploadId}/feedback`, feedback)
 }
 
 // const uploadUpdate = (_id, upload) => {

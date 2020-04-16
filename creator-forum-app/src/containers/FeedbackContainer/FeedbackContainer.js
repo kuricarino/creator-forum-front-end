@@ -35,21 +35,19 @@ class FeedbackContainer extends React.Component {
     // };
 
     // new feedback posted
-    // updateFeedbackContainer = () => {
-    //     console.log('new feedback added');
-    //     FeedbackApi.feedbackIndex(this.props.upload._id)
-    //     .then(res => {
-    //             console.log(res.data);
-    //             // let feedback = res.data.filter((upload) => {
-    //             //     return upload.feedback === this.props.upload._id
-    //             // })
-    //             let feedback = res.data;
-    //             feedback.reverse();
-    //             this.setState({
-    //                 feedback: feedback,
-    //         })}
-    //     );
-    // }
+    updateFeedbackContainer = () => {
+        console.log('new feedback and component should re-render');
+        FeedbackApi.feedbackIndex(this.props.upload._id)
+        .then(res => {
+            let feedback = res.data.filter((feedback) => {
+                return feedback.upload === this.props.upload._id
+            })
+            feedback.reverse();
+            this.setState({
+                feedback: feedback,
+        })}
+        );
+    }
 
     // // forum page
     // // shouldComponentUpdate(nextProps, nextState) {
@@ -127,15 +125,12 @@ class FeedbackContainer extends React.Component {
             return (
                 <div className="container">
                     <div className="content ">
-                    {/* <a className="level-item" aria-label="comments"> */}
                     <span className="icon is-small">
                         <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
                     </span>
                     {this.state.feedback && this.state.feedback.map(item => {
-                    return <Feedback feedback={item.body} key={item._id} userId={this.props.id} updateUploadContainer={this.updateUploadContainer}/>
+                    return <Feedback feedback={item.body} key={item._id} userId={this.props.id} updateUploadContainer={this.updateUploadContainer} uploadId={this.props.upload._id}/>
                     })}
-                    {/* <Feedback upload={this.props.upload} loggedInUser={this.props.loggedInUser} feedback={this.state.feedback} /> */}
-                    {/* <UploadForm userId={this.props.id} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} /> */} 
                     </div>
                 </div>
             )
@@ -144,19 +139,13 @@ class FeedbackContainer extends React.Component {
             
             <div className="container">
                 <div className="content">
-                {/* <a className="level-item" aria-label="comments"> */}
                 <span className="icon is-small">
                     <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
                 </span>
                 {this.state.feedback && this.state.feedback.map(item => {
-                    return <Feedback feedback={item.body} key={item._id} userId={this.props.id} updateUploadContainer={this.updateUploadContainer}/>
-                    })}
-                {/* {allFeedback && allFeedback.map(feedback => {
-                return <Feedback feedback={feedback.body} key={feedback._id} userId={this.props.id} updateUploadContainer={this.updateUploadContainer}/>
-                })} */}
-                {/* <Feedback upload={this.props.upload} loggedInUser={this.props.loggedInUser} feedback={this.state.feedback} /> */}
-                <FeedbackForm upload={this.props.upload} loggedInUser={this.props.loggedInUser}  updateFeedbackContainer={this.updateFeedbackContainer} />
-                {/* <UploadForm userId={this.props.id} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} /> */} 
+                    return <Feedback feedback={item.body} key={item._id} userId={this.props.id} updateUploadContainer={this.updateUploadContainer} uploadId={this.props.upload._id} />
+                })}
+                <FeedbackForm uploadId={this.props.upload._id} loggedInUser={this.props.loggedInUser}  updateFeedbackContainer={this.updateFeedbackContainer} />
                 </div>
             </div>
             

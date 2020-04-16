@@ -2,6 +2,7 @@ import React from 'react';
 // import UploadUpdateForm from './UploadUpdateForm';
 // import DeleteMessage from './DeleteMessage';
 import FeedbackContainer from '../../containers/FeedbackContainer/FeedbackContainer';
+import FeedbackForm from '../../components/Feedback/FeedbackForm';
 import FeedbackApi from '../../api/FeedbackApi';
 
 class ForumUpload extends React.Component {
@@ -105,9 +106,10 @@ class ForumUpload extends React.Component {
         //         </>
         //     );
         // }
-
+        console.log(this.state.feedback)
         // forum page
         return (
+            
             <div className="box">
                 <article className="media">
                     <div className="media-left">
@@ -120,6 +122,9 @@ class ForumUpload extends React.Component {
                         <p className="has-text-black">
                         <strong>{this.props.upload.title}</strong>
                         <br/>
+                        {/* make this a link */}
+                        <strong><a href={this.props.upload.link}>View Work</a></strong>
+                        <br/>
                         {this.props.upload.body}
                         </p>
                     </div>
@@ -131,6 +136,12 @@ class ForumUpload extends React.Component {
                 </article>
                 <br/>
                 <FeedbackContainer updateFeedbackContainer={this.updateFeedbackContainer} upload={this.props.upload} loggedInUser={this.props.loggedInUser} />
+                {/* {this.state.feedback && this.state.feedback.map(item => {
+                    return <FeedbackForm upload={this.props.upload} key={item._id} loggedInUser={this.props.loggedInUser}  updateFeedbackContainer={this.updateFeedbackContainer} />
+                })} */}
+                {/* {this.state.feedback && this.state.feedback.map(item => {
+                    return <FeedbackForm upload={this.props.upload} key={item._id} loggedInUser={this.props.loggedInUser} />
+                })} */}
                 {/* <UploadUpdateForm showUpdateState={this.state.showUpdate} updateUploadContainer={this.props.updateUploadContainer} onClose={this.handleCloseUpdateForm} upload={this.props.upload} editButtonStyle={this.state.editButtonStyle} /> */}
                 {/* <DeleteMessage showDeleteState={this.state.showDelete} updateUploadContainer={this.props.updateUploadContainer} onClose={this.handleCloseDeleteMessage} upload={this.props.upload}/> */}
                 </div>
