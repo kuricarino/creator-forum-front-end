@@ -49,6 +49,7 @@ class ForumUpload extends React.Component {
         });
       };
 
+
     render () {
         // let editButtonClass = this.state.editButtonStyle ? "icon is-small" : "icon is-small has-text-link"
         // let extraContent = []
@@ -94,7 +95,7 @@ class ForumUpload extends React.Component {
                     </div>
                 </article>
                 <br/>
-                <FeedbackContainer upload={this.props.upload} loggedInUser={this.props.loggedInUser} updateUploadContainer={this.props.updateUploadContainer} />
+                <FeedbackContainer upload={this.props.upload} loggedInUser={this.props.loggedInUser} />
                 {/* <UploadUpdateForm showUpdateState={this.state.showUpdate} updateUploadContainer={this.props.updateUploadContainer} onClose={this.handleCloseUpdateForm} upload={this.props.upload} editButtonStyle={this.state.editButtonStyle} /> */}
                 {/* <DeleteMessage showDeleteState={this.state.showDelete} updateUploadContainer={this.props.updateUploadContainer} onClose={this.handleCloseDeleteMessage} upload={this.props.upload}/> */}
                 </div>

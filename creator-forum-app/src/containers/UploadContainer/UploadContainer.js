@@ -90,8 +90,8 @@ class UploadContainer extends React.Component {
     //      forum component    //
     // *********************** //
 
-    updateUploadsOnForum = () => {
-        console.log('UploadContainer on Forum re-rendered');
+    // updateUploadsOnForum = () => {
+        // console.log('UploadContainer on Forum re-rendered');
         // UploadApi.uploadIndex()
         // .then(res => {
         //         let allUploads = res.data;
@@ -100,7 +100,7 @@ class UploadContainer extends React.Component {
         //             uploads: allUploads,
         //     })}
         // );
-    }
+    // }
 
     render() {
         let buttonClass = this.state.buttonStyle ? "icon has-text-link is-large" : "icon has-text-danger is-large"

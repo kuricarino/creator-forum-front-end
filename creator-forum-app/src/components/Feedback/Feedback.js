@@ -28,7 +28,7 @@ class Feedback extends React.Component {
         return (
             <div className="content">
                 <p className="has-text-black">
-                    <strong>{this.props.upload.feedback}</strong>
+                    <strong>{this.props.feedback.body}</strong>
                 </p>
             </div>
         )

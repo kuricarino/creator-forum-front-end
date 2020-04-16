@@ -1,12 +1,12 @@
 import axios from 'axios';
 const endpoint = 'http://localhost:4000/api/v1';
 
-// const feedbackIndex = (uploadId) => {
-//     let request = axios.get(`${endpoint}/uploads/${uploadId}/feedback`)
-//     return request;
-// }
-const feedbackCreate = (feedback) => {
-    return axios.post(`${endpoint}/uploads/${feedback.upload}/feedback`, feedback)
+const feedbackIndex = (uploadId) => {
+    let request = axios.get(`${endpoint}/uploads/${uploadId}/feedback`)
+    return request;
+}
+const feedbackCreate = (uploadId, feedback) => {
+    return axios.post(`${endpoint}/uploads/${uploadId}/feedback`, feedback)
 }
 
 // const uploadUpdate = (_id, upload) => {
@@ -18,6 +18,6 @@ const feedbackCreate = (feedback) => {
 // }
 
 export default {
-    // feedbackIndex,
+    feedbackIndex,
     feedbackCreate
 }

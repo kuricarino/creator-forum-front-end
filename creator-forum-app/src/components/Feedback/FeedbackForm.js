@@ -9,14 +9,14 @@ class FeedbackForm extends React.Component {
         console.log('feedback posted');
         event.preventDefault();
         // if (this.validateFields()) {
-            FeedbackApi.feedbackCreate({
+            FeedbackApi.feedbackCreate(this.props.upload._id, {
                 body: document.getElementById('body').value,
                 upload: this.props.upload._id,
                 user: this.props.loggedInUser
             })
             .then(res => {
                 // from Upload Container which will re-render container to include new upload
-                this.props.updateUploadContainer();
+                this.props.updateFeedbackContainer();
                 // this.props.closeUpdateForm && this.props.closeUpdateForm(event);
             })
         // }
