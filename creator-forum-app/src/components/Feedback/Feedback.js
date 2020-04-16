@@ -30,7 +30,7 @@ class Feedback extends React.Component {
             <>
             <div className="content">
                 <p className="has-text-black">
-                    <strong>{this.props.feedback}</strong>
+                    <strong>{this.props.feedback.body}</strong>
                 </p>
             </div>
             {/* <FeedbackForm uploadId={this.props.uploadId} loggedInUser={this.props.loggedInUser}  updateFeedbackContainer={this.updateFeedbackContainer} /> */}

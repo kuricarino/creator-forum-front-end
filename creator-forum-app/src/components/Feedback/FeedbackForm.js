@@ -32,7 +32,7 @@ class FeedbackForm extends React.Component {
             console.log(document.getElementById(`${this.props.uploadId}`).value);
             FeedbackApi.feedbackCreate({
                 body: document.getElementById(`${this.props.uploadId}`).value,
-                uploadId: this.props.uploadId,
+                upload: this.props.uploadId,
                 user: this.props.loggedInUser
             })
             .then(res => {

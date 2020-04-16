@@ -143,9 +143,9 @@ class FeedbackContainer extends React.Component {
                     <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
                 </span>
                 {this.state.feedback && this.state.feedback.map(item => {
-                    return <Feedback feedback={item.body} key={item._id} userId={this.props.id} updateUploadContainer={this.updateUploadContainer} uploadId={this.props.upload._id} />
+                    return <Feedback feedback={item} key={item._id} userId={this.props.id} updateUploadContainer={this.updateUploadContainer} uploadId={this.props.upload._id} />
                 })}
-                <FeedbackForm uploadId={this.props.upload._id} loggedInUser={this.props.loggedInUser}  updateFeedbackContainer={this.updateFeedbackContainer} />
+                <FeedbackForm feedback={this.state.feedback} uploadId={this.props.upload._id} loggedInUser={this.props.loggedInUser}  updateFeedbackContainer={this.updateFeedbackContainer} />
                 </div>
             </div>
             
