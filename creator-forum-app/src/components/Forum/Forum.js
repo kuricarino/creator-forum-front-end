@@ -1,6 +1,7 @@
 import React from 'react';
 import './Forum.css'
 import UploadApi from '../../api/UploadApi';
+import FeedbackApi from '../../api/FeedbackApi';
 import UploadContainer from '../../containers/UploadContainer/UploadContainer';
 
 class Forum extends React.Component {
@@ -12,7 +13,7 @@ class Forum extends React.Component {
     }
 
     componentDidMount() {
-        console.log('UploadContainer rendered');
+        console.log('GET uploads rendered on forum page');
         UploadApi.uploadIndex()
         .then(res => {
                 let allUploads = res.data;

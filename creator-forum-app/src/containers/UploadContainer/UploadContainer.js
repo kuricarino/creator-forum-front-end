@@ -1,6 +1,7 @@
 import React from 'react';
 // import { Route } from 'react-router-dom';
 import UploadApi from '../../api/UploadApi';
+import FeedbackApi from '../../api/FeedbackApi';
 import Upload from '../../components/Upload/Upload';
 import ForumUpload from '../../components/Upload/ForumUpload';
 import UploadForm from '../../components/Upload/UploadForm';
@@ -10,6 +11,7 @@ class UploadContainer extends React.Component {
     state = {
         // uploads
         uploads: this.props.uploads,
+        feedback: {},
         pathName: '',
         show: false,
         buttonStyle: true,
@@ -54,7 +56,7 @@ class UploadContainer extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log('updating');
+        console.log('page refresh');
         if (prevProps !== this.props) { 
             
             const pathName = window.location.pathname;
@@ -90,17 +92,19 @@ class UploadContainer extends React.Component {
     //      forum component    //
     // *********************** //
 
-    // updateUploadsOnForum = () => {
-        // console.log('UploadContainer on Forum re-rendered');
-        // UploadApi.uploadIndex()
-        // .then(res => {
-        //         let allUploads = res.data;
-        //         allUploads.reverse();
-        //         this.setState({
-        //             uploads: allUploads,
-        //     })}
-        // );
-    // }
+
+
+    updateFeedbackOnForum = () => {
+        console.log('Feedback on Forum re-rendered');
+        UploadApi.uploadIndex()
+        .then(res => {
+                let allUploads = res.data;
+                allUploads.reverse();
+                this.setState({
+                    uploads: allUploads,
+            })}
+        );
+    }
 
     render() {
         let buttonClass = this.state.buttonStyle ? "icon has-text-link is-large" : "icon has-text-danger is-large"
@@ -153,7 +157,7 @@ class UploadContainer extends React.Component {
                 <div className="container">
                 <div className="content ">
                 {uploads && uploads.map(upload => {
-                    return <ForumUpload upload={upload} key={upload._id} loggedInUser={this.props.userId} updateUploadContainer={this.updateUploadsOnForum}/>
+                    return <ForumUpload upload={upload} key={upload._id} loggedInUser={this.props.userId} updateUploadsOnForum={this.updateUploadsOnForum}/>
                 })}
                 {/* <span className={buttonClass} onClick={event => this.showUploadForm()}> */}
                     {/* <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i> */}

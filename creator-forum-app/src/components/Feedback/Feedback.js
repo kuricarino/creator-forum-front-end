@@ -28,7 +28,7 @@ class Feedback extends React.Component {
         return (
             <div className="content">
                 <p className="has-text-black">
-                    <strong>{this.props.feedback.body}</strong>
+                    <strong>{this.props.feedback}</strong>
                 </p>
             </div>
         )
