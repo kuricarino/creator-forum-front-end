@@ -135,7 +135,11 @@ class ForumUpload extends React.Component {
                     </div>
                 </article>
                 <br/>
-                <FeedbackContainer updateFeedbackContainer={this.updateFeedbackContainer} upload={this.props.upload} loggedInUser={this.props.loggedInUser} />
+                <FeedbackContainer 
+                    updateFeedbackContainer={this.updateFeedbackContainer} 
+                    upload={this.props.upload} 
+                    loggedInUser={this.props.loggedInUser} 
+                />
                 {/* {this.state.feedback && this.state.feedback.map(item => {
                     return <FeedbackForm upload={this.props.upload} key={item._id} loggedInUser={this.props.loggedInUser}  updateFeedbackContainer={this.updateFeedbackContainer} />
                 })} */}

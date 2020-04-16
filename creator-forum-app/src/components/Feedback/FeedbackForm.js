@@ -2,28 +2,11 @@ import React from 'react';
 import FeedbackApi from '../../api/FeedbackApi';
 
 class FeedbackForm extends React.Component {
+    // state = {
+    //     input: document.getElementsByClassName("field").value
+    // }
 
     // field validation
-
-    // componentDidMount() {
-    //     console.log('feedback container mounted');
-    //     console.log(this.props.upload._id)
-    //     FeedbackApi.feedbackIndex(this.props.upload._id)
-    //     .then(res => {
-    //         console.log(res.data);
-    //         let feedback = res.data.filter((feedback) => {
-    //             // console.log(feedback);
-    //             return feedback.upload === this.props.upload._id
-    //             console.log(feedback);
-    //         })
-    //         // let feedback = res.data;
-    //         // console.log(res);
-    //         feedback.reverse();
-    //         this.setState({
-    //             feedback: feedback,
-    //     })}
-    //     );
-    // }
 
     submitFeedback = (event) => {
         event.preventDefault();
@@ -39,7 +22,17 @@ class FeedbackForm extends React.Component {
                 console.log('feedback posted on backend');
                 this.props.updateFeedbackContainer();
             })
+            // this.setState({
+            //     input: document.getElementById(`${this.props.uploadId}`).value
+            // })
+            // this.clearForm();
         }
+    
+    // clearForm() {
+    //     this.setState({
+    //         input: ''
+    //     })
+    // }
 
     render() {
         return (
