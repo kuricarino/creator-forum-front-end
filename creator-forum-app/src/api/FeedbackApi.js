@@ -9,15 +9,17 @@ const feedbackCreate = (feedback) => {
     return axios.post(`${endpoint}/uploads/${feedback.uploadId}/feedback`, feedback)
 }
 
-// const uploadUpdate = (_id, upload) => {
-//     return axios.put(`${endpoint}/uploads/${_id}`, upload)
-// }
+const feedbackUpdate = (feedback) => {
+    return axios.put(`${endpoint}/uploads/${feedback.upload}/feedback/${feedback._id}`, feedback)
+}
 
-// const uploadDelete = (upload) => {
-//     return axios.delete(`${endpoint}/uploads/${upload._id}`)
-// }
+const feedbackDelete = (feedback) => {
+    return axios.delete(`${endpoint}/uploads/${feedback.upload}/feedback/${feedback._id}`)
+}
 
 export default {
     feedbackIndex,
-    feedbackCreate
+    feedbackCreate,
+    feedbackUpdate,
+    feedbackDelete
 }

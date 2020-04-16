@@ -1,58 +1,42 @@
 import React from 'react';
 import FeedbackUpdateForm from '../../components/Feedback/FeedbackUpdateForm';
+import FeedbackDeleteMessage from '../../components/Feedback/FeedbackDeleteMessage';
 // import FeedbackApi from '../../api/FeedbackApi';
 // import Upload from '../../components/Upload/Upload';
 
 class Feedback extends React.Component {
-
     state = {
         formStyle: {
             display: 'none',
-        }
+        },
+        showDelete: false,
     }
 
+    // field validation
+
+    showDeleteMessage = (event) => {
+        this.setState({
+            showDelete: !this.state.showDelete,
+            // editButtonStyle: !this.state.editButtonStyle
+        });
+    }
+
+    deleteButton = () => {
+        this.showDeleteMessage()
+    }
+
+    handleCloseDeleteMessage = (event) => {
+        this.setState({
+            showDelete: !this.state.showDelete
+        });
+    };
+
+    // for editing feedback
     toggleBodyForm = () => {
         this.state.formStyle.display === 'block'
         ? this.setState({ formStyle: {display: 'none' } })
         : this.setState({ formStyle: {display: 'block'} });
     }
-
-    // field validation
-
-    // submitNewUpload = (event) => {
-    //     event.preventDefault();
-    //     // if (this.validateFields()) {
-    //         UploadApi.uploadCreate({
-    //             feedback: document.getElementById('title').value,
-    //             user: this.props.userId
-    //         })
-    //         .then(res => {
-    //             // from Upload Container which will re-render container to include new upload
-    //             this.props.updateUploadContainer();
-    //             this.props.closeUpdateForm && this.props.closeUpdateForm(event);
-    //         })
-    //     //}
-    // }
-    // passed as props to feedback from feedback container
-        // updateFeedbackContainer={this.updateFeedbackContainer}
-        // updateFeedbackContainer = () => {
-        //     console.log('new feedback and component should re-render');
-        //     FeedbackApi.feedbackIndex(this.props.upload._id)
-        //     .then(res => {
-        //         let feedback = res.data.filter((feedback) => {
-        //             return feedback.upload === this.props.upload._id
-        //         })
-        //         feedback.reverse();
-        //         this.setState({
-        //             feedback: feedback,
-        //     })}
-        //     );
-        // }
-
-    // updateButton() {
-    //     console.log('update comment on forum clicked');
-    //     this.toggleBodyForm();
-    // }
 
     deleteButton() {
         console.log('deleted comment on forum clicked')
@@ -89,6 +73,13 @@ class Feedback extends React.Component {
                 feedback={this.props.feedback}
                 style={this.state.formStyle} 
                 toggleBodyForm={this.props.toggleBodyForm}
+                updateFeedbackContainer={this.props.updateFeedbackContainer}
+            />
+            <FeedbackDeleteMessage 
+                feedback={this.props.feedback}
+                showDeleteState={this.state.showDelete} 
+                updateFeedbackContainer={this.props.updateFeedbackContainer} 
+                onClose={this.handleCloseDeleteMessage} 
             />
             <br/>
             </>

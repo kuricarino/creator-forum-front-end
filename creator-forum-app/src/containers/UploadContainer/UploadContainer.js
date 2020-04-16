@@ -92,8 +92,6 @@ class UploadContainer extends React.Component {
     //      forum component    //
     // *********************** //
 
-
-
     updateFeedbackOnForum = () => {
         console.log('Feedback on Forum re-rendered');
         UploadApi.uploadIndex()

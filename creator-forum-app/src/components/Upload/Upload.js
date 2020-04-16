@@ -46,7 +46,7 @@ class Upload extends React.Component {
         this.setState({
             showDelete: !this.state.showDelete
         });
-      };
+    };
 
     render () {
         // let editButtonClass = this.state.editButtonStyle ? "icon is-small" : "icon is-small has-text-link"

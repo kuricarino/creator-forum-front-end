@@ -118,7 +118,7 @@ class FeedbackContainer extends React.Component {
     }
 
     render() {
-        let allFeedback = this.state.feedback;
+        // let allFeedback = this.state.feedback;
         console.log(this.state.feedback);
         console.log(`where is this?`);
         // user can only post feedback on work they DID NOT upload
@@ -130,7 +130,14 @@ class FeedbackContainer extends React.Component {
                         <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
                     </span>
                     {this.state.feedback && this.state.feedback.map(item => {
-                    return <Feedback feedback={item.body} key={item._id} userId={this.props.upload.user._id} updateUploadContainer={this.updateUploadContainer} updateFeedbackContainer={this.updateFeedbackContainer} uploadId={this.props.upload._id} loggedInUser={this.props.loggedInUser} />
+                    return <Feedback 
+                        feedback={item.body} 
+                        key={item._id} 
+                        userId={this.props.upload.user._id} 
+                        updateUploadContainer={this.updateUploadContainer} 
+                        updateFeedbackContainer={this.updateFeedbackContainer} 
+                        uploadId={this.props.upload._id} loggedInUser={this.props.loggedInUser} 
+                    />
                     })}
                     </div>
                 </div>
@@ -144,9 +151,22 @@ class FeedbackContainer extends React.Component {
                     <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
                 </span>
                 {this.state.feedback && this.state.feedback.map(item => {
-                    return <Feedback feedback={item} key={item._id} userId={this.props.upload.user._id} updateUploadContainer={this.updateUploadContainer} updateFeedbackContainer={this.updateFeedbackContainer} uploadId={this.props.upload._id} loggedInUser={this.props.loggedInUser} />
+                    return <Feedback 
+                                feedback={item} 
+                                key={item._id} 
+                                userId={this.props.upload.user._id} 
+                                updateUploadContainer={this.updateUploadContainer} 
+                                updateFeedbackContainer={this.updateFeedbackContainer} 
+                                uploadId={this.props.upload._id} 
+                                loggedInUser={this.props.loggedInUser} 
+                            />
                 })}
-                <FeedbackForm feedback={this.state.feedback} uploadId={this.props.upload._id} loggedInUser={this.props.loggedInUser} updateFeedbackContainer={this.updateFeedbackContainer} />
+                <FeedbackForm 
+                    feedback={this.state.feedback} 
+                    uploadId={this.props.upload._id} 
+                    loggedInUser={this.props.loggedInUser} 
+                    updateFeedbackContainer={this.updateFeedbackContainer} 
+                />
                 </div>
             </div>
             
