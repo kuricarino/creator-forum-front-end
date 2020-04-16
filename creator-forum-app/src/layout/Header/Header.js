@@ -23,12 +23,12 @@ const Header = (props) => {
                 </span>
             </div>
             <div id="navbarMenuHeroA" className="navbar-menu">
-                    { //if user logged in, show profile, forum and logout
+                    { // if user logged in, show profile, forum and logout
                         (props.user) ? 
                         <div className="navbar-end">
                             {/* <a className="navbar-item">Profile</a>  */}
                             <Link className="navbar-item has-text-black" to='/profile'>Profile</Link>
-                            {/* <a className="navbar-item"><Link to='/forum'>Forum</Link></a> */}
+                            <Link className="navbar-item has-text-black" to='/forum'>Forum</Link>
                             <Link className="navbar-item has-text-black" onClick={props.logout}>Logout</Link>
                             {/* might need to change onClick above */}
                         </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Home from '../components/Home/Home';
 import Profile from '../components/Profile/Profile'
+import Forum from '../components/Forum/Forum';
 import Register from '../components/auth/Register/Register';
 import Login from '../components/auth/Login/Login';
 
@@ -35,6 +36,16 @@ const Routes = (props) => {
                 render={
                     () => props.user ? // if true show profile, else login
                         <Profile user={props.user} />
+                    :
+                        // <Login login={props.login} />
+                        <Redirect to='/'/>
+                }
+            />
+            <Route
+                path='/forum'
+                render={
+                    () => props.user ? // if true show forum, else login
+                        <Forum user={props.user} />
                     :
                         // <Login login={props.login} />
                         <Redirect to='/'/>

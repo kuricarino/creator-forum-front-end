@@ -2,15 +2,25 @@ import React from 'react';
 // import { Route } from 'react-router-dom';
 import UploadApi from '../../api/UploadApi';
 import Upload from '../../components/Upload/Upload';
+import ForumUpload from '../../components/Upload/ForumUpload';
 import UploadForm from '../../components/Upload/UploadForm';
+import './UploadContainer.css';
 
 class UploadContainer extends React.Component {
     state = {
+        // uploads
         uploads: this.props.uploads,
         pathName: '',
         show: false,
         buttonStyle: true,
+        // feedback
+        // feedback: {},
+        // showFeedback: ''
     }
+
+    // *********************** //
+    //    profile component    //
+    // *********************** //
 
     // changes + button to red (would want to have x)
     showUploadForm = (event) => {
@@ -43,16 +53,9 @@ class UploadContainer extends React.Component {
         );
     }
 
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     console.log(`shouldComponentUpdate invoked`)
-    //     if (nextProps.uploads && nextProps.uploads !== this.props.uploads) {
-    //         return false;
-    //     }
-    //     return true;
-    // }
-
     componentDidUpdate(prevProps, prevState) {
-        if (prevProps !== this.props) {
+        console.log('updating');
+        if (prevProps !== this.props) { 
             
             const pathName = window.location.pathname;
 
@@ -67,16 +70,36 @@ class UploadContainer extends React.Component {
                     uploads: userUpload,
                     pathName: pathName
                 });
-            } else {
-                // forum component
+            } 
+            else {
+                console.log('forum component')
                 let allUploads = res.data;
                 allUploads.reverse();
                 this.setState({
                     uploads: allUploads,
                     pathName: pathName
-                })}
-            })
+                })
+                }
+            
+            } 
+            )
         }
+    }
+
+    // *********************** //
+    //      forum component    //
+    // *********************** //
+
+    updateUploadsOnForum = () => {
+        console.log('UploadContainer on Forum re-rendered');
+        // UploadApi.uploadIndex()
+        // .then(res => {
+        //         let allUploads = res.data;
+        //         allUploads.reverse();
+        //         this.setState({
+        //             uploads: allUploads,
+        //     })}
+        // );
     }
 
     render() {
@@ -97,9 +120,6 @@ class UploadContainer extends React.Component {
                             {/* or use has-text-info and change submit button */}
                                 <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
                             </span>
-                            {/* <div className="content">
-
-                            </div> */}
                         </div>
                         </div>
                     </div>
@@ -120,10 +140,30 @@ class UploadContainer extends React.Component {
                     </div>
                     </div>
                 </div>
-            )
-        }
-        return null
-        // add logic for forum container
+            );
+        };
+
+        // *********************** //
+        //      forum component    //
+        // *********************** //
+        console.log('rendering forum page')
+        return (
+        // logic for forum
+            <div className="tile" id="forum-scroll">
+                <div className="container">
+                <div className="content ">
+                {uploads && uploads.map(upload => {
+                    return <ForumUpload upload={upload} key={upload._id} loggedInUser={this.props.userId} updateUploadContainer={this.updateUploadsOnForum}/>
+                })}
+                {/* <span className={buttonClass} onClick={event => this.showUploadForm()}> */}
+                    {/* <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i> */}
+                {/* </span> */}
+                {/* <UploadForm userId={this.props.id} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} /> */}
+                </div>
+                </div>
+            </div>
+            
+        )
     }
 }
 

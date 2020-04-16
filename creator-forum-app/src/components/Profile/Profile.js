@@ -68,6 +68,7 @@ class Profile extends React.Component {
 
     // not sure if componentDidUpdate is running
     componentDidUpdate(prevProps, prevState) {
+        // console.log('componentDidUpdate');
         if (prevProps.user.id !== this.props.user.id) {
             this.setState({
                 user: this.props.user

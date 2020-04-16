@@ -105,7 +105,7 @@ logout = () => {
 render() {
   console.log(this.state.user)
   return (
-    <section className="hero is-primary is-fullheight">
+    <section className="hero is-primary is-fullheight is-flex-mobile">
       <Header 
         logout={this.logout}
         user={this.state.user}
