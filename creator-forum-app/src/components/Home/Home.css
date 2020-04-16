@@ -1,0 +1,14 @@
+.title.is-size-1.has-text-white.has-text-left.is-uppercase {
+    border: solid #ffffff 3px;
+    padding: 10px 0px 10px 10px;
+    width: 15rem; 
+    margin-bottom: 2rem;
+}
+
+/* .title.has-text-white.has-text-left.is-uppercase {
+    border: solid #ffffff 3px;
+    padding: 10px 0px 10px 10px;
+    width: 17rem; 
+    margin-bottom: 2rem;
+    font-size: 350%;
+} */
