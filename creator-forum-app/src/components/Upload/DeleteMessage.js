@@ -1,5 +1,6 @@
 import React from 'react';
 import UploadApi from '../../api/UploadApi';
+import './DeleteMessage.css';
 
 class DeleteMessage extends React.Component {
 
@@ -24,13 +25,13 @@ class DeleteMessage extends React.Component {
         }
 
         return (
-            <article className="message is-normal is-danger">
+            <article className="message is-normal is-danger" id="delete-message-profile">
                 <div className="message-header">
                     <p className="has-text-white">
                     {/* <span className="icon has-text-white">
                         <i className="fas fa-exclamation circle"></i>
                     </span> */}
-                    Are you sure you want to delete this upload?
+                    Delete this upload?
                     </p>
                     <button className="delete is-small" onClick={() => this.onClose()} aria-label="delete"></button>
                 </div>

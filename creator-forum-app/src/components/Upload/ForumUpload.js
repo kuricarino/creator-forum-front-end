@@ -4,6 +4,7 @@ import React from 'react';
 import FeedbackContainer from '../../containers/FeedbackContainer/FeedbackContainer';
 import FeedbackForm from '../../components/Feedback/FeedbackForm';
 import FeedbackApi from '../../api/FeedbackApi';
+import './ForumUpload.css';
 
 class ForumUpload extends React.Component {
     state = {
@@ -110,8 +111,8 @@ class ForumUpload extends React.Component {
         // forum page
         return (
             
-            <div className="box">
-                <article className="media">
+            <div className="box is-narrow-mobile" id="forum-upload-box">
+                <article className="media is-narrow-mobile">
                     <div className="media-left">
                     <figure className="image is-64x64">
                         <img src="https://img.icons8.com/ios-glyphs/150/000000/for-you--v1.png" alt="user upload"/>

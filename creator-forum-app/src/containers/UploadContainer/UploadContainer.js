@@ -112,7 +112,7 @@ class UploadContainer extends React.Component {
             // user has no uploads
             if (uploads.length === 0) {
                 return (
-                    <div className="tile notification">
+                    <div className="tile notification is-flex-mobile">
                         <div className="container">
                         <div className="content">
                             <p className="title has-text-grey-dark">Your Work</p>
@@ -128,7 +128,7 @@ class UploadContainer extends React.Component {
                 )
             }
             return (
-                <div className="tile notification">
+                <div className="tile notification is-flex-mobile">
                     <div className="container">
                     <div className="content ">
                     <h1 className="title has-text-grey-dark">Your Work</h1>

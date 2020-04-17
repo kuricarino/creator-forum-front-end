@@ -3,6 +3,7 @@ import FeedbackUpdateForm from '../../components/Feedback/FeedbackUpdateForm';
 import FeedbackDeleteMessage from '../../components/Feedback/FeedbackDeleteMessage';
 // import FeedbackApi from '../../api/FeedbackApi';
 // import Upload from '../../components/Upload/Upload';
+import './Feedback.css';
 
 class Feedback extends React.Component {
     state = {
@@ -49,10 +50,17 @@ class Feedback extends React.Component {
         if (this.props.feedback.user === this.props.loggedInUser) {
         return (
             <>
-            <div className="content">
+            <div className="content is-narrow-mobile" id="feedback-forum-content">
+                {/* <span className="icon is-small">
+                    <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
+                </span> */}
                 <p className="has-text-black">
-                    <strong>{this.props.feedback.body}</strong>
+                <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true" id="comment-bubble-icon"></i>
+                <strong> {this.props.feedback.body}</strong>
                 </p>
+                {/* <p className="has-text-black has-text-centered">
+                    <strong>{this.props.feedback.body}</strong>
+                </p> */}
                     <nav className="level is-mobile">
                         <div className="level-right">
                         <a className="level-item" aria-label="edit">

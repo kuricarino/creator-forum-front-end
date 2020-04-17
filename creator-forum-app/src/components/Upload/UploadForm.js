@@ -64,9 +64,9 @@ class UploadForm extends React.Component {
                                     <textarea className="textarea is-small has-text-black" name="body" id="body" type="text" defaultValue="" />
                                 </div>
                             </div>
-                            <div className="field">
+                            {/* <div className="field">
                                     <p className="has-text-black">ADD TOGGLE FOR PRIVACY</p>
-                            </div>
+                            </div> */}
                             {/* </div> */}
                             {/* <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.submitUpdate}>Upload on Forum</button> */}
                             <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.submitNewUpload}>Upload on Forum</button>

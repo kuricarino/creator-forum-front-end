@@ -124,11 +124,11 @@ class FeedbackContainer extends React.Component {
         // user can only post feedback on work they DID NOT upload
         if (this.props.loggedInUser === this.props.upload.user._id) {
             return (
-                <div className="container" id="feedback-container">
-                    <div className="content">
-                    <span className="icon is-small">
+                <div className="container is-narrow-mobile" id="feedback-container">
+                    <div className="content is-narrow-mobile">
+                    {/* <span className="icon is-small">
                         <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
-                    </span>
+                    </span> */}
                     {this.state.feedback && this.state.feedback.map(item => {
                     return <Feedback 
                         feedback={item.body} 
@@ -147,9 +147,9 @@ class FeedbackContainer extends React.Component {
             
             <div className="container" id="feedback-container">
                 <div className="content">
-                <span className="icon is-small">
+                {/* <span className="icon is-small">
                     <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
-                </span>
+                </span> */}
                 {this.state.feedback && this.state.feedback.map(item => {
                     return <Feedback 
                                 feedback={item} 
