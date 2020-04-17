@@ -121,7 +121,7 @@ class Profile extends React.Component {
                                     </div>
                                 </div> */}
                                 <div className="field email">
-                                        <p className="has-text-grey-dark"><i className="fas fa-envelope has-text-grey-dark"></i> {this.props.user.email}</p>
+                                    <p className="has-text-grey-dark"><i className="fas fa-envelope has-text-grey-dark"></i> {this.props.user.email}</p>
                                 </div>
                                 {/* </div> */}
                                 <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.submitUpdate}>Save Changes</button>

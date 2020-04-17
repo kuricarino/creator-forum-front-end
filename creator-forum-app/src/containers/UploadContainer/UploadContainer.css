@@ -7,3 +7,7 @@
     overflow: auto;
 } */
 
+#upload-container-profile {
+    max-height: 500rem;
+    overflow: auto;
+}

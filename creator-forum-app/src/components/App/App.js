@@ -8,11 +8,9 @@ import UserApi from '../../api/UserApi';
 import './App.css';
 // import 'bulma/css/bulma.css';
 
-
 class App extends React.Component {
   state = {
     user: {},
-    // id: ''
   }
 
   componentDidMount() {
@@ -29,8 +27,6 @@ class App extends React.Component {
           email: decoded.email,
           id: decoded._id 
         },
-        // user: decoded.username,
-        // id: decoded._id
       })
     }
   }
@@ -54,8 +50,6 @@ register = (user) => {
             email: decoded.email,
             id: decoded._id
           },
-          // user: decoded.username,
-          // id: decoded._id
         })
       }
     })
@@ -82,8 +76,6 @@ login = (user) => {
           email: decoded.email,
           id: decoded._id
         },
-        // user: decoded.username,
-        // id: decoded._id
       })
     }
   })
@@ -98,7 +90,6 @@ logout = () => {
 
   this.setState({
     user:'',
-    // id:''
   })
 }
 
@@ -112,7 +103,6 @@ render() {
       />
       <Routes 
         user={this.state.user}
-        // id={this.state.id}
         login={this.login}
         register={this.register}
         logout={this.logout}

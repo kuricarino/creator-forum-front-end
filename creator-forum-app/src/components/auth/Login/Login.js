@@ -28,26 +28,69 @@ handleSubmit = (e) => {
 
 render() {
     return (
-        <div>
-            <form onSubmit={this.handleSubmit}>
-                <label> Username:
-                    <input
-                        type="text"
+        // <div className="container">
+        // <div class="columns">
+        // <div className="column is-narrow-mobile">
+        // <div className="tile notification is-vertical">
+        //     <form onSubmit={this.handleSubmit}>
+        //         <label className="has-text-grey-dark"> Username:
+        //             <input
+        //                 type="text"
+        //                 name="username"
+        //                 value={this.state.username}
+        //                 onChange={this.handleChange}>
+        //             </input>
+        //         </label>
+        //         <label className="has-text-grey-dark">Password:
+        //             <input
+        //                 type="password"
+        //                 name="password"
+        //                 value={this.state.password}
+        //                 onChange={this.handleChange}>
+        //             </input>
+        //         </label>
+        //         <button className="button is-rounded is-link is-outlined" type="submit">Enter</button>
+        //     </form>
+        // </div>
+        // </div>
+        // </div>
+        // </div>
+
+
+
+
+        <div className="container">
+        <div class="columns">
+        <div className="column is-narrow-mobile">
+        <div className="tile notification is-vertical">
+            <div className="field">
+                    <label className="label has-text-grey-dark">Username</label>
+                    <div className="control">
+                        <input 
+                        className="input has-text-black" 
                         name="username"
-                        value={this.state.username}
-                        onChange={this.handleChange}>
-                    </input>
-                </label>
-                <label>Password:
-                    <input
-                        type="password"
+                        type="text" 
+                        value={this.state.username} 
+                        onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+                <div className="field">
+                    <label className="label has-text-grey-dark">Password</label>
+                    <div className="control">
+                        <input 
+                        className="input has-text-black" 
                         name="password"
-                        value={this.state.password}
-                        onChange={this.handleChange}>
-                    </input>
-                </label>
-                <button type="submit">Enter</button>
-            </form>
+                        type="password" 
+                        value={this.state.password} 
+                        onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+            <button className="button is-rounded is-link is-outlined" type="submit" onClick={this.handleSubmit}>Enter</button>
+        </div>
+        </div>
+        </div>
         </div>
     )
 }

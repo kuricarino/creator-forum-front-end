@@ -92,17 +92,17 @@ class UploadContainer extends React.Component {
     //      forum component    //
     // *********************** //
 
-    updateFeedbackOnForum = () => {
-        console.log('Feedback on Forum re-rendered');
-        UploadApi.uploadIndex()
-        .then(res => {
-                let allUploads = res.data;
-                allUploads.reverse();
-                this.setState({
-                    uploads: allUploads,
-            })}
-        );
-    }
+    // updateFeedbackOnForum = () => {
+    //     console.log('Feedback on Forum re-rendered');
+    //     UploadApi.uploadIndex()
+    //     .then(res => {
+    //             let allUploads = res.data;
+    //             allUploads.reverse();
+    //             this.setState({
+    //                 uploads: allUploads,
+    //         })}
+    //     );
+    // }
 
     render() {
         let buttonClass = this.state.buttonStyle ? "icon has-text-link is-large" : "icon has-text-danger is-large"
@@ -133,7 +133,7 @@ class UploadContainer extends React.Component {
                 )
             }
             return (
-                <div className="tile notification is-flex-mobile">
+                <div className="tile notification is-flex-mobile" id="upload-container-profile">
                     <div className="container">
                     <div className="content ">
                     <h1 className="title has-text-grey-dark">Your Work</h1>
@@ -174,7 +174,7 @@ class UploadContainer extends React.Component {
                         upload={upload} 
                         key={upload._id} 
                         loggedInUser={this.props.userId} 
-                        updateUploadsOnForum={this.updateUploadsOnForum}
+                        // updateUploadsOnForum={this.updateUploadsOnForum}
                     />
                 })}
                 {/* <span className={buttonClass} onClick={event => this.showUploadForm()}> */}

@@ -11,7 +11,9 @@ class Upload extends React.Component {
         showUpdate: false,
         showDelete: false,
         showFeedback: false,
-        // editButtonStyle: true,
+        editButtonStyle: false,
+        deleteButtonStyle: false,
+        feedbackButtonStyle: false
     }
 
     // *********************** //
@@ -21,6 +23,8 @@ class Upload extends React.Component {
     showUpdateForm = (event) => {
         this.setState({
             showUpdate: !this.state.showUpdate,
+            showDelete: this.state.showDelete,
+            showFeedback: this.state.showFeedback
             // editButtonStyle: !this.state.editButtonStyle
         });
     };
@@ -39,7 +43,7 @@ class Upload extends React.Component {
     showDeleteMessage = (event) => {
         this.setState({
             showDelete: !this.state.showDelete,
-            // editButtonStyle: !this.state.editButtonStyle
+            // editButtonStyle: !this.state.deleteButtonStyle
         });
     }
 
@@ -56,7 +60,7 @@ class Upload extends React.Component {
     showFeedback = (event) => {
         this.setState({
             showFeedback: !this.state.showFeedback,
-            // editButtonStyle: !this.state.editButtonStyle
+            // editButtonStyle: !this.state.feedbackButtonStyle
         });
     };
 
@@ -64,12 +68,6 @@ class Upload extends React.Component {
         console.log('show feedback')
         this.showFeedback()
     }
-
-    // handleCloseFeedback = (event) => {
-    //     this.setState({
-    //         showFeedback: !this.state.showFeedback
-    //     });
-    // }
 
     componentDidMount = () => {
         console.log('new feedback added');
@@ -88,7 +86,9 @@ class Upload extends React.Component {
     }
 
     render () {
-        // let editButtonClass = this.state.editButtonStyle ? "icon is-small" : "icon is-small has-text-link"
+        // let editButtonClass = this.state.editButtonStyle ? "icon is-small has-text-link" : "icon is-small"
+        // let deleteButtonClass = this.state.deleteButtonStyle ? "icon is-small has-text-link" : "icon is-small"
+        // let feedbackButtonClass = this.state.feedbackButtonStyle ? "icon is-small has-text-link" : "icon is-small"
 
         // const pathName = window.location.pathname;
 
@@ -118,7 +118,7 @@ class Upload extends React.Component {
                         <br/>
                         {this.props.upload.body}
                         </p>
-                    </div>
+                    {/* </div> */}
                     <nav className="level is-mobile">
                         <div className="level-left">
                         <a className="level-item" aria-label="edit">
@@ -140,6 +140,7 @@ class Upload extends React.Component {
                         </div>
                     </nav>
                     </div>
+                    </div>
                 </article>
                 <br/>
                 <UploadUpdateForm 
@@ -157,7 +158,6 @@ class Upload extends React.Component {
                 />
                 <ProfileFeedbackContainer
                     showFeedbackState={this.state.showFeedback}
-                    onClose={this.handleCloseFeedback}
                     upload={this.props.upload}
                     loggedInUser={this.props.userId} 
                 />

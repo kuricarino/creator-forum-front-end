@@ -1,14 +1,8 @@
 import React from 'react';
-// import { Route } from 'react-router-dom';
-// import UploadApi from '../../api/UploadApi';
-// import Upload from '../../components/Upload/Upload';
-import ForumUpload from '../../components/Upload/ForumUpload';
-import Feedback from '../../components/Feedback/Feedback';
+import ForumFeedback from '../../components/Feedback/ForumFeedback';
 import FeedbackForm from '../../components/Feedback/FeedbackForm';
 import FeedbackApi from '../../api/FeedbackApi';
 import './FeedbackContainer.css';
-// import UploadForm from '../../components/Upload/UploadForm';
-// import './UploadContainer.css';
 
 class FeedbackContainer extends React.Component {
 
@@ -130,9 +124,10 @@ class FeedbackContainer extends React.Component {
                         <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
                     </span> */}
                     {this.state.feedback && this.state.feedback.map(item => {
-                    return <Feedback 
-                        feedback={item.body} 
-                        key={item._id} 
+                    return <ForumFeedback 
+                        feedback={item} 
+                        key={item._id}
+                        upload={this.props.upload} 
                         userId={this.props.upload.user._id} 
                         updateUploadContainer={this.updateUploadContainer} 
                         updateFeedbackContainer={this.updateFeedbackContainer} 
@@ -151,9 +146,10 @@ class FeedbackContainer extends React.Component {
                     <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
                 </span> */}
                 {this.state.feedback && this.state.feedback.map(item => {
-                    return <Feedback 
+                    return <ForumFeedback 
                                 feedback={item} 
-                                key={item._id} 
+                                key={item._id}
+                                upload={this.props.upload} 
                                 userId={this.props.upload.user._id} 
                                 updateUploadContainer={this.updateUploadContainer} 
                                 updateFeedbackContainer={this.updateFeedbackContainer} 

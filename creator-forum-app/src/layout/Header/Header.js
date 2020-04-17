@@ -1,9 +1,7 @@
 import React from 'react';
-// import { Route, Link, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './Header.css';
-// import Login from '../../components/auth/Login/Login';
-// import Register from '../../components/auth/Register/Register';
+import magritte from '../../images/icons8-magritte-96.png';
 
 const Header = (props) => {
     return (
@@ -12,10 +10,10 @@ const Header = (props) => {
         <div className="container">
             <div className="navbar-brand">
                 <a className="navbar-item" href="/">
-                <img src="https://img.icons8.com/color/96/000000/magritte.png" alt="Creator Forum" width="30" height="28"/>
+                <img src={magritte} alt="Creator Forum" width="30" height="28"/>
                 </a>
                 <Link className="navbar-item has-text-black" to='/'>Creator Forum</Link>
-                
+                <Link className="navbar-item has-text-black" to='/about'>About</Link>
                 <span className="navbar-burger burger" data-target="navbarMenuHeroA">
                     <span></span>
                     <span></span>
@@ -26,11 +24,9 @@ const Header = (props) => {
                     { // if user logged in, show profile, forum and logout
                         (props.user) ? 
                         <div className="navbar-end">
-                            {/* <a className="navbar-item">Profile</a>  */}
                             <Link className="navbar-item has-text-black" to='/profile'>Profile</Link>
                             <Link className="navbar-item has-text-black" to='/forum'>Forum</Link>
                             <Link className="navbar-item has-text-black" onClick={props.logout}>Logout</Link>
-                            {/* might need to change onClick above */}
                         </div>
                         // else show login and signup
                         : <div className="navbar-end">

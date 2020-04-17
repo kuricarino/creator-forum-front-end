@@ -1,11 +1,11 @@
 import React from 'react';
-import FeedbackUpdateForm from '../../components/Feedback/FeedbackUpdateForm';
-import FeedbackDeleteMessage from '../../components/Feedback/FeedbackDeleteMessage';
+import FeedbackUpdateForm from './FeedbackUpdateForm';
+import FeedbackDeleteMessage from './FeedbackDeleteMessage';
 // import FeedbackApi from '../../api/FeedbackApi';
 // import Upload from '../../components/Upload/Upload';
-import './Feedback.css';
+import './ForumFeedback.css';
 
-class Feedback extends React.Component {
+class ForumFeedback extends React.Component {
     state = {
         formStyle: {
             display: 'none',
@@ -54,7 +54,7 @@ class Feedback extends React.Component {
                 {/* <span className="icon is-small">
                     <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
                 </span> */}
-                <p className="has-text-black">
+                <p className="has-text-grey-dark">
                 <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true" id="comment-bubble-icon"></i>
                 <strong> {this.props.feedback.body}</strong>
                 </p>
@@ -93,16 +93,19 @@ class Feedback extends React.Component {
             </>
         )
         }
+        // if (this.props.upload.user._id !== this.props.loggedInUser) {
         return (
             <>
             <div className="content">
-                <p className="has-text-black">
-                    <strong>{this.props.feedback.body}</strong>
+                <p className="has-text-grey-dark">
+                    <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true" id="comment-bubble-icon"></i>
+                    <strong> {this.props.feedback.body}</strong>
                 </p>
             </div>
             </>
         )
+        // }
     }
 }
 
-export default Feedback;
+export default ForumFeedback;
