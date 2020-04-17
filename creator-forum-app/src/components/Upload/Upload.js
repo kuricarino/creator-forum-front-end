@@ -1,23 +1,27 @@
 import React from 'react';
+import FeedbackApi from '../../api/FeedbackApi';
 import UploadUpdateForm from './UploadUpdateForm';
 import DeleteMessage from './DeleteMessage';
+import ProfileFeedbackContainer from '../../containers/FeedbackContainer/ProfileFeedbackContainer';
 import './Upload.css';
 
 class Upload extends React.Component {
     state = {
+        feedback: {},
         showUpdate: false,
         showDelete: false,
+        showFeedback: false,
         // editButtonStyle: true,
     }
 
     // *********************** //
-    //      profile view       //
+    //    upload on profile    //
     // *********************** //
     
     showUpdateForm = (event) => {
         this.setState({
             showUpdate: !this.state.showUpdate,
-            editButtonStyle: !this.state.editButtonStyle
+            // editButtonStyle: !this.state.editButtonStyle
         });
     };
 
@@ -35,7 +39,7 @@ class Upload extends React.Component {
     showDeleteMessage = (event) => {
         this.setState({
             showDelete: !this.state.showDelete,
-            editButtonStyle: !this.state.editButtonStyle
+            // editButtonStyle: !this.state.editButtonStyle
         });
     }
 
@@ -48,6 +52,40 @@ class Upload extends React.Component {
             showDelete: !this.state.showDelete
         });
     };
+
+    showFeedback = (event) => {
+        this.setState({
+            showFeedback: !this.state.showFeedback,
+            // editButtonStyle: !this.state.editButtonStyle
+        });
+    };
+
+    feedbackButton = () => {
+        console.log('show feedback')
+        this.showFeedback()
+    }
+
+    // handleCloseFeedback = (event) => {
+    //     this.setState({
+    //         showFeedback: !this.state.showFeedback
+    //     });
+    // }
+
+    componentDidMount = () => {
+        console.log('new feedback added');
+        FeedbackApi.feedbackIndex(this.props.upload._id)
+        .then(res => {
+                console.log(res.data);
+                // let feedback = res.data.filter((upload) => {
+                //     return upload.feedback === this.props.upload._id
+                // })
+                let feedback = res.data;
+                feedback.reverse();
+                this.setState({
+                    feedback: feedback,
+            })}
+        );
+    }
 
     render () {
         // let editButtonClass = this.state.editButtonStyle ? "icon is-small" : "icon is-small has-text-link"
@@ -95,7 +133,7 @@ class Upload extends React.Component {
                             </span>
                         </a>
                         <a className="level-item" aria-label="comments">
-                            <span className="icon is-small">
+                            <span className="icon is-small" onClick={this.feedbackButton}>
                             <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
                             </span>
                         </a>
@@ -107,7 +145,8 @@ class Upload extends React.Component {
                 <UploadUpdateForm 
                     showUpdateState={this.state.showUpdate} 
                     updateUploadContainer={this.props.updateUploadContainer} 
-                    onClose={this.handleCloseUpdateForm} upload={this.props.upload} 
+                    onClose={this.handleCloseUpdateForm} 
+                    upload={this.props.upload} 
                     editButtonStyle={this.state.editButtonStyle} 
                 />
                 <DeleteMessage 
@@ -115,6 +154,12 @@ class Upload extends React.Component {
                     updateUploadContainer={this.props.updateUploadContainer} 
                     onClose={this.handleCloseDeleteMessage} 
                     upload={this.props.upload}
+                />
+                <ProfileFeedbackContainer
+                    showFeedbackState={this.state.showFeedback}
+                    onClose={this.handleCloseFeedback}
+                    upload={this.props.upload}
+                    loggedInUser={this.props.userId} 
                 />
                 </div>
             )

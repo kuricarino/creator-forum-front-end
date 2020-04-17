@@ -117,7 +117,12 @@ class UploadContainer extends React.Component {
                         <div className="content">
                             <p className="title has-text-grey-dark">Your Work</p>
                             <p className="subtitle has-text-grey-dark">Upload your work to the forum</p>
-                            <UploadForm userId={this.props.id} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} />
+                            <UploadForm 
+                                userId={this.props.id} 
+                                updateUploadContainer={this.updateUploadContainer} 
+                                closeUpdateForm={this.handleClose} 
+                                show={this.state.show} 
+                            />
                             <span className={buttonClass} onClick={event => this.showUploadForm()}> 
                             {/* or use has-text-info and change submit button */}
                                 <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
@@ -133,12 +138,22 @@ class UploadContainer extends React.Component {
                     <div className="content ">
                     <h1 className="title has-text-grey-dark">Your Work</h1>
                     {uploads && uploads.map(upload => {
-                        return <Upload upload={upload} key={upload._id} userId={this.props.id} updateUploadContainer={this.updateUploadContainer}/>
+                        return <Upload 
+                            upload={upload} 
+                            key={upload._id} 
+                            userId={this.props.id} 
+                            updateUploadContainer={this.updateUploadContainer}
+                        />
                     })}
                     <span className={buttonClass} onClick={event => this.showUploadForm()}>
                         <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
                     </span>
-                    <UploadForm userId={this.props.id} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} />
+                    <UploadForm 
+                        userId={this.props.id} 
+                        updateUploadContainer={this.updateUploadContainer} 
+                        closeUpdateForm={this.handleClose} 
+                        show={this.state.show} 
+                    />
                     </div>
                     </div>
                 </div>
@@ -155,7 +170,12 @@ class UploadContainer extends React.Component {
                 <div className="container">
                 <div className="content ">
                 {uploads && uploads.map(upload => {
-                    return <ForumUpload upload={upload} key={upload._id} loggedInUser={this.props.userId} updateUploadsOnForum={this.updateUploadsOnForum}/>
+                    return <ForumUpload 
+                        upload={upload} 
+                        key={upload._id} 
+                        loggedInUser={this.props.userId} 
+                        updateUploadsOnForum={this.updateUploadsOnForum}
+                    />
                 })}
                 {/* <span className={buttonClass} onClick={event => this.showUploadForm()}> */}
                     {/* <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i> */}
