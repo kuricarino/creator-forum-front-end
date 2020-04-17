@@ -56,9 +56,6 @@ render() {
         // </div>
         // </div>
 
-
-
-
         <div className="container">
         <div class="columns">
         <div className="column is-narrow-mobile">

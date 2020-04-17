@@ -31,50 +31,74 @@ class Register extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>First Name:
-                        <input
-                        type="text"
-                        name="firstName"
-                        value={this.state.firstName}
-                        onChange={this.handleChange}>
-                        </input>
-                    </label>
-                    <label>Last Name:
-                        <input
-                        type="text"
-                        name="lastName"
-                        value={this.state.lastName}
-                        onChange={this.handleChange}>
-                        </input>
-                    </label>
-                    <label>Username:
-                        <input
-                        type="text"
-                        name="username"
-                        value={this.state.username}
-                        onChange={this.handleChange}>
-                        </input>
-                    </label>
-                    <label>Email:
-                        <input
-                        type="text"
-                        name="email"
-                        value={this.state.email}
-                        onChange={this.handleChange}>
-                        </input>
-                    </label>
-                    <label>Password:
-                        <input
-                        type="password"
-                        name="password"
-                        value={this.state.password}
-                        onChange={this.handleChange}>
-                        </input>
-                    </label>
-                    <button type="submit">Submit</button>
-                </form>
+            <div className="container">
+            <div class="columns">
+            <div className="column is-narrow-mobile">
+            <div className="tile notification is-vertical">
+                    <div className="field">
+                    <label className="label has-text-grey-dark">First Name</label>
+                        <div className="control">
+                            <input
+                                className="input has-text-black"
+                                type="text"
+                                name="firstName"
+                                value={this.state.firstName}
+                                onChange={this.handleChange}>
+                            </input>
+                        </div>
+                    </div>
+                    <div className="field">
+                    <label className="label has-text-grey-dark">Last Name</label>
+                        <div className="control">
+                            <input
+                                className="input has-text-black"
+                                type="text"
+                                name="lastName"
+                                value={this.state.lastName}
+                                onChange={this.handleChange}>
+                            </input>
+                        </div>
+                    </div>
+                    <div className="field">
+                    <label className="label has-text-grey-dark">Username</label>
+                        <div className="control">
+                            <input
+                                className="input has-text-black"
+                                type="text"
+                                name="username"
+                                value={this.state.username}
+                                onChange={this.handleChange}>
+                            </input>
+                        </div>
+                    </div>
+                    <div className="field">
+                    <label className="label has-text-grey-dark">Email</label>
+                        <div className="control">
+                            <input 
+                                className="input has-text-black"
+                                type="text"
+                                name="email"
+                                value={this.state.email}
+                                onChange={this.handleChange}>
+                            </input>
+                        </div>
+                    </div>
+                    <div className="field">
+                    <label className="label has-text-grey-dark">Password</label>
+                        <div className="control">
+                            <input 
+                                className="input has-text-black"
+                                type="password"
+                                name="password"
+                                value={this.state.password}
+                                onChange={this.handleChange}>
+                            </input>
+                        </div>
+                    </div>
+                    <button className="button is-rounded is-link is-outlined" type="submit" onClick={this.handleSubmit}>Submit</button>
+            </div>
+            </div>
+            </div>
             </div>
         )
     }
