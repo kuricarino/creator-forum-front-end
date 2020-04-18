@@ -56,6 +56,7 @@ class UploadContainer extends React.Component {
     }
 
     // componentDidMount() {
+    //     console.log('component did mount profile page');
     //     const pathName = window.location.pathname;
 
     //     UploadApi.uploadIndex()
@@ -94,7 +95,7 @@ class UploadContainer extends React.Component {
         .then(res => {
             if (pathName === '/profile') {
                 let userUpload = res.data.filter((upload) => {
-                    // return upload.user._id === this.props.id
+                    return upload.user._id === this.props.id
                 })
                 userUpload.reverse();
                 this.setState({
