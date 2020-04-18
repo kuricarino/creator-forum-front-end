@@ -8,6 +8,28 @@ class Login extends React.Component {
     }
 
 // add field validation
+handleValidation = () => {
+    // Puts state keys in keys array
+    let inputIds = ['login-username','login-password']
+    let valid = true
+    inputIds.map(inputId => {
+        let input = document.getElementById(inputId);
+        input.classList.remove('is-danger');
+        if (input.value === '') {
+            valid = false;
+            // add bulma class is-danger to fields
+            input.classList.add('is-danger');
+            // let divField = document.getElementsByClassName('field');
+            // let p = document.createElement('p');
+            // p.classList.add('help');
+            // p.classList.add('is-danger');
+            // let errorMessage = document.createTextNode('field cannot be empty');
+            // p.appendChild(errorMessage);
+            // divField.appendChild(p);
+        }
+    })
+    return valid;
+}
 
 handleChange = (event) => {
     this.setState({
@@ -15,13 +37,26 @@ handleChange = (event) => {
     })
 }
 
+// handleSubmit = (e) => {
+//     e.preventDefault();
+//     let user = {
+//         username: this.state.username,
+//         password: this.state.password
+//     }
+//     this.props.login(user);
+// }
+
 handleSubmit = (e) => {
     e.preventDefault();
-    let user = {
+    // let user = {
+    //     username: this.state.username,
+    //     password: this.state.password
+    // }
+    if (this.handleValidation())
+    this.props.login({
         username: this.state.username,
         password: this.state.password
-    }
-    this.props.login(user);
+    });
 }
 
 render() {
@@ -63,6 +98,7 @@ render() {
                     <div className="control">
                         <input 
                         className="input has-text-black" 
+                        id="login-username"
                         name="username"
                         type="text" 
                         value={this.state.username} 
@@ -75,6 +111,7 @@ render() {
                     <div className="control">
                         <input 
                         className="input has-text-black" 
+                        id="login-password"
                         name="password"
                         type="password" 
                         value={this.state.password} 
