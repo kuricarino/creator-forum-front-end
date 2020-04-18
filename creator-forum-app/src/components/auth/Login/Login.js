@@ -19,13 +19,6 @@ handleValidation = () => {
             valid = false;
             // add bulma class is-danger to fields
             input.classList.add('is-danger');
-            // let divField = document.getElementsByClassName('field');
-            // let p = document.createElement('p');
-            // p.classList.add('help');
-            // p.classList.add('is-danger');
-            // let errorMessage = document.createTextNode('field cannot be empty');
-            // p.appendChild(errorMessage);
-            // divField.appendChild(p);
         }
     })
     return valid;

@@ -10,22 +10,50 @@ class Register extends React.Component {
         password: '',
     }
 
+    handleValidation = () => {
+        // Puts state keys in keys array
+        let inputIds = ['firstName-register','lastName-register','username-register','email-register','password-register']
+        let valid = true
+        inputIds.map(inputId => {
+            let input = document.getElementById(inputId);
+            input.classList.remove('is-danger');
+            if (input.value === '') {
+                valid = false;
+                // add bulma class is-danger to fields
+                input.classList.add('is-danger');
+            }
+        })
+        return valid;
+    }
+
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
 
+    // handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     let newUser = {
+    //         firstName: this.state.firstName,
+    //         lastName: this.state.lastName,
+    //         username: this.state.username,
+    //         email: this.state.email, 
+    //         password: this.state.password
+    //     }
+    //     this.props.register(newUser)
+    // }
+
     handleSubmit = (e) => {
         e.preventDefault();
-        let newUser = {
+        if (this.handleValidation())
+        this.props.register({
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             username: this.state.username,
             email: this.state.email, 
             password: this.state.password
-        }
-        this.props.register(newUser)
+        })
     }
 
     render() {
