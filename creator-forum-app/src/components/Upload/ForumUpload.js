@@ -4,6 +4,7 @@ import React from 'react';
 import FeedbackContainer from '../../containers/FeedbackContainer/FeedbackContainer';
 import FeedbackForm from '../../components/Feedback/FeedbackForm';
 import FeedbackApi from '../../api/FeedbackApi';
+import foryou from '../../images/icons8-for-you-120.png';
 import './ForumUpload.css';
 
 class ForumUpload extends React.Component {
@@ -88,25 +89,6 @@ class ForumUpload extends React.Component {
 
 
     render () {
-        // let editButtonClass = this.state.editButtonStyle ? "icon is-small" : "icon is-small has-text-link"
-        // let extraContent = []
-        // if (this.props.upload.userId === this.props.userId) {
-        //     extraContent.push(
-        //         <>
-        //         <a className="level-item" aria-label="edit">
-        //             <span className="icon is-small" onClick={this.updateButton} >
-        //             <i className="fas fa-edit" aria-hidden="true"></i>
-        //             {/* <p>Edit</p> */}
-        //             </span>
-        //         </a>
-        //         <a className="level-item" aria-label="delete">
-        //             <span className="icon is-small" onClick={this.deleteButton} >
-        //             <i className="fas fa-trash" aria-hidden="true"></i>
-        //             </span>
-        //         </a>
-        //         </>
-        //     );
-        // }
         console.log(this.state.feedback)
         // forum page
         return (
@@ -115,7 +97,7 @@ class ForumUpload extends React.Component {
                 <article className="media is-narrow-mobile">
                     <div className="media-left">
                     <figure className="image is-64x64">
-                        <img src="https://img.icons8.com/ios-glyphs/150/000000/for-you--v1.png" alt="user upload"/>
+                        <img src={foryou} alt="user upload"/>
                     </figure>
                     </div>
                     <div className="media-content">

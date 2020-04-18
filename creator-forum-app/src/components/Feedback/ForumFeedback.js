@@ -83,6 +83,7 @@ class ForumFeedback extends React.Component {
                 toggleBodyForm={this.props.toggleBodyForm}
                 updateFeedbackContainer={this.props.updateFeedbackContainer}
             />
+            <br/>
             <FeedbackDeleteMessage 
                 feedback={this.props.feedback}
                 showDeleteState={this.state.showDelete} 

@@ -35,7 +35,7 @@ class UploadForm extends React.Component {
                     {/* <div className="tile is-parent is-vertical is-6 notification"> */}
                     <div className="tile is-vertical">
                         {/* <div> */}
-                        <h1 className="title has-text-grey-dark">Add New Upload</h1>
+                        <h1 className="title has-text-grey-dark">Post on the Forum</h1>
                             {/* <figure className="container image is-128x128" id="profile-photo">
                                 <img className="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="default profile"/>
                             </figure> */}
@@ -61,7 +61,7 @@ class UploadForm extends React.Component {
                             <div className="field">
                                 <label className="label has-text-grey-dark">Body</label>
                                 <div className="control">
-                                    <textarea className="textarea is-small has-text-black" name="body" id="body" type="text" defaultValue="" />
+                                    <textarea className="textarea has-text-black" name="body" id="body" type="text" defaultValue="" />
                                 </div>
                             </div>
                             {/* <div className="field">

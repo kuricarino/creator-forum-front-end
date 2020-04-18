@@ -106,6 +106,7 @@ render() {
         login={this.login}
         register={this.register}
         logout={this.logout}
+        // userRequestToDeleteProfile={this.userRequestToDeleteProfile}
       />
       <Footer />
     </section>

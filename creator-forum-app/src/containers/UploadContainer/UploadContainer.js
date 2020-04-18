@@ -55,6 +55,35 @@ class UploadContainer extends React.Component {
         );
     }
 
+    // componentDidMount() {
+    //     const pathName = window.location.pathname;
+
+    //     UploadApi.uploadIndex()
+    //     .then(res => {
+    //         if (pathName === '/profile') {
+    //             let userUpload = res.data.filter((upload) => {
+    //                 // return upload.user._id === this.props.id
+    //             })
+    //             userUpload.reverse();
+    //             this.setState({
+    //                 uploads: userUpload,
+    //                 pathName: pathName
+    //             });
+    //         } 
+    //         else {
+    //             console.log('forum component')
+    //             let allUploads = res.data;
+    //             allUploads.reverse();
+    //             this.setState({
+    //                 uploads: allUploads,
+    //                 pathName: pathName
+    //             })
+    //             }
+            
+    //         } 
+    //     )
+    // }
+
     componentDidUpdate(prevProps, prevState) {
         console.log('page refresh');
         if (prevProps !== this.props) { 
@@ -65,7 +94,7 @@ class UploadContainer extends React.Component {
         .then(res => {
             if (pathName === '/profile') {
                 let userUpload = res.data.filter((upload) => {
-                    return upload.user._id === this.props.id
+                    // return upload.user._id === this.props.id
                 })
                 userUpload.reverse();
                 this.setState({
@@ -87,6 +116,35 @@ class UploadContainer extends React.Component {
             )
         }
     }
+
+    // componentDidMount() {
+    //     const pathName = window.location.pathname;
+
+    //     UploadApi.uploadIndex()
+    //     .then(res => {
+    //         if (pathName === '/profile') {
+    //             let userUpload = res.data.filter((upload) => {
+    //                 return upload.user._id === this.props.id
+    //             })
+    //             userUpload.reverse();
+    //             this.setState({
+    //                 uploads: userUpload,
+    //                 pathName: pathName
+    //             });
+    //         } 
+    //         else {
+    //             console.log('forum component')
+    //             let allUploads = res.data;
+    //             allUploads.reverse();
+    //             this.setState({
+    //                 uploads: allUploads,
+    //                 pathName: pathName
+    //             })
+    //             }
+            
+    //         } 
+    //         )
+    // }
 
     // *********************** //
     //      forum component    //
@@ -117,16 +175,16 @@ class UploadContainer extends React.Component {
                         <div className="content">
                             <p className="title has-text-grey-dark">Your Work</p>
                             <p className="subtitle has-text-grey-dark">Upload your work to the forum</p>
+                            <span className={buttonClass} onClick={event => this.showUploadForm()}> 
+                            {/* or use has-text-info and change submit button */}
+                                <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
+                            </span>
                             <UploadForm 
                                 userId={this.props.id} 
                                 updateUploadContainer={this.updateUploadContainer} 
                                 closeUpdateForm={this.handleClose} 
                                 show={this.state.show} 
                             />
-                            <span className={buttonClass} onClick={event => this.showUploadForm()}> 
-                            {/* or use has-text-info and change submit button */}
-                                <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
-                            </span>
                         </div>
                         </div>
                     </div>

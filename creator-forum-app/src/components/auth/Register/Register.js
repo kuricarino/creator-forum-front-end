@@ -17,7 +17,6 @@ class Register extends React.Component {
     }
 
     handleSubmit = (e) => {
-        // console.log('do you work?')
         e.preventDefault();
         let newUser = {
             firstName: this.state.firstName,
@@ -40,6 +39,7 @@ class Register extends React.Component {
                         <div className="control">
                             <input
                                 className="input has-text-black"
+                                id="firstName-register"
                                 type="text"
                                 name="firstName"
                                 value={this.state.firstName}
@@ -52,6 +52,7 @@ class Register extends React.Component {
                         <div className="control">
                             <input
                                 className="input has-text-black"
+                                id="lastName-register"
                                 type="text"
                                 name="lastName"
                                 value={this.state.lastName}
@@ -64,6 +65,7 @@ class Register extends React.Component {
                         <div className="control">
                             <input
                                 className="input has-text-black"
+                                id="username-register"
                                 type="text"
                                 name="username"
                                 value={this.state.username}
@@ -76,6 +78,7 @@ class Register extends React.Component {
                         <div className="control">
                             <input 
                                 className="input has-text-black"
+                                id="email-register"
                                 type="text"
                                 name="email"
                                 value={this.state.email}
@@ -88,6 +91,7 @@ class Register extends React.Component {
                         <div className="control">
                             <input 
                                 className="input has-text-black"
+                                id="password-register"
                                 type="password"
                                 name="password"
                                 value={this.state.password}

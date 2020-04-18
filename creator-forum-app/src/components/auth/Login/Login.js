@@ -1,6 +1,4 @@
 import React from 'react';
-// import UserApi from '../../api/UserApi';
-// import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
     

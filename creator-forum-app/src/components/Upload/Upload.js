@@ -3,6 +3,7 @@ import FeedbackApi from '../../api/FeedbackApi';
 import UploadUpdateForm from './UploadUpdateForm';
 import DeleteMessage from './DeleteMessage';
 import ProfileFeedbackContainer from '../../containers/FeedbackContainer/ProfileFeedbackContainer';
+import foryou from '../../images/icons8-for-you-120.png';
 import './Upload.css';
 
 class Upload extends React.Component {
@@ -90,23 +91,12 @@ class Upload extends React.Component {
         // let deleteButtonClass = this.state.deleteButtonStyle ? "icon is-small has-text-link" : "icon is-small"
         // let feedbackButtonClass = this.state.feedbackButtonStyle ? "icon is-small has-text-link" : "icon is-small"
 
-        // const pathName = window.location.pathname;
-
-        // if (pathName === '/profile') {
             return (
                 <div className="box" id="profile-upload-box">
                 <article className="media">
                     <div className="media-left">
                     <figure className="image is-64x64">
-                        {/* <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image"/> */}
-                        {/* <img src="https://img.icons8.com/ios/100/000000/exhibition.png"/> */}
-                        {/* <img src="https://img.icons8.com/dotty/150/000000/for-you.png" alt="user upload"/> */}
-                        {/* <img src="https://img.icons8.com/material/150/000000/for-you.png"/> */}
-                        {/* <img src="https://img.icons8.com/ios-filled/150/000000/for-you.png"/> */}
-                        {/* <img src="https://img.icons8.com/material-rounded/150/000000/for-you.png"/> */}
-                        <img src="https://img.icons8.com/ios-glyphs/150/000000/for-you--v1.png" alt="user upload"/>
-                        {/* <img src="https://img.icons8.com/material-outlined/150/000000/for-you.png"/> */}
-                        {/* <img src="https://img.icons8.com/plasticine/100/000000/content.png" alt="upload"/> */}
+                        <img src={foryou} alt="user upload"/>
                     </figure>
                     </div>
                     <div className="media-content">
@@ -114,17 +104,15 @@ class Upload extends React.Component {
                         <p>
                         <strong>{this.props.upload.title}</strong>
                         <br/>
-                        <strong><a className="has-text-link" id="profile-upload-link" href={this.props.upload.link}>Your Link</a></strong>
+                        <strong><a className="has-text-link" id="profile-upload-link" href={this.props.upload.link}>View Work</a></strong>
                         <br/>
                         {this.props.upload.body}
                         </p>
-                    {/* </div> */}
                     <nav className="level is-mobile">
                         <div className="level-left">
                         <a className="level-item" aria-label="edit">
                             <span className="icon is-small" onClick={this.updateButton} >
                             <i className="fas fa-edit" aria-hidden="true"></i>
-                            {/* <p>Edit</p> */}
                             </span>
                         </a>
                         <a className="level-item" aria-label="delete">
