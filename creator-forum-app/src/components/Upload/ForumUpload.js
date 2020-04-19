@@ -1,7 +1,5 @@
 import React from 'react';
 import FeedbackContainer from '../../containers/FeedbackContainer/FeedbackContainer';
-// import FeedbackForm from '../../components/Feedback/FeedbackForm';
-import FeedbackApi from '../../api/FeedbackApi';
 import foryou from '../../images/for-you-120.png';
 import './ForumUpload.css';
 
@@ -9,7 +7,6 @@ class ForumUpload extends React.Component {
     state = {
         showUpdate: false,
         showDelete: false,
-        // editButtonStyle: true,
         feedback: {}
     }
 
@@ -25,7 +22,6 @@ class ForumUpload extends React.Component {
     };
 
     updateButton = () => {
-        console.log('edit button clicked')
         this.showUpdateForm()
     }
 
@@ -52,19 +48,6 @@ class ForumUpload extends React.Component {
         });
     };
 
-    // user posts new feedback
-    // updateFeedbackContainer = () => {
-    //     console.log('running?')
-    //     FeedbackApi.feedbackIndex(this.props.upload._id)
-    //     .then(res => {
-    //             let feedback = res.data;
-    //             feedback.reverse();
-    //             this.setState({
-    //                 feedback: feedback,
-    //         })}
-    //     );
-    // }
-
     render () {
         return (
             <div className="box is-narrow-mobile forum-upload-box">
@@ -87,8 +70,7 @@ class ForumUpload extends React.Component {
                     </div>
                 </article>
                 <br/>
-                <FeedbackContainer 
-                    // updateFeedbackContainer={this.updateFeedbackContainer} 
+                <FeedbackContainer  
                     upload={this.props.upload} 
                     loggedInUser={this.props.loggedInUser} 
                 />

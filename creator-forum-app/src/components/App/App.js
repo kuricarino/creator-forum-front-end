@@ -84,7 +84,7 @@ login = (user) => {
 logout = () => {
   console.log(`${this.state.user.username} has logged out`);
   localStorage.removeItem('jwtToken');
-  //remove header by passing no value 
+   
   setAuthHeader();
 
   this.setState({

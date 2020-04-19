@@ -11,7 +11,6 @@ class UploadContainer extends React.Component {
         feedback: {},
         pathName: '',
         show: false,
-        // buttonStyle: true,
     }
 
     // *********************** //
@@ -21,7 +20,6 @@ class UploadContainer extends React.Component {
     showUploadForm = (event) => {
         this.setState({
             show: !this.state.show,
-            // buttonStyle: !this.state.buttonStyle
         });
     }
 
@@ -31,7 +29,6 @@ class UploadContainer extends React.Component {
         });
     };
 
-    // after creating a new upload or updating an upload
     updateUploadContainer = () => {
         UploadApi.uploadIndex()
         .then(res => {
@@ -77,7 +74,6 @@ class UploadContainer extends React.Component {
     }
 
     render() {
-        // let buttonClass = this.state.buttonStyle ? "icon has-text-link is-large" : "icon has-text-danger is-large"
         let uploads = this.state.uploads;
         if (this.state.pathName === '/profile') {
             if (uploads.length === 0) {

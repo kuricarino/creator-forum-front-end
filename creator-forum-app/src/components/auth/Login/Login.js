@@ -7,9 +7,7 @@ class Login extends React.Component {
         password: ''
     }
 
-// add field validation
 handleValidation = () => {
-    // Puts state keys in keys array
     let inputIds = ['login-username','login-password']
     let valid = true
     inputIds.map(inputId => {
@@ -17,7 +15,6 @@ handleValidation = () => {
         input.classList.remove('is-danger');
         if (input.value === '') {
             valid = false;
-            // add bulma class is-danger to fields
             input.classList.add('is-danger');
         }
     })
@@ -30,21 +27,8 @@ handleChange = (event) => {
     })
 }
 
-// handleSubmit = (e) => {
-//     e.preventDefault();
-//     let user = {
-//         username: this.state.username,
-//         password: this.state.password
-//     }
-//     this.props.login(user);
-// }
-
 handleSubmit = (e) => {
     e.preventDefault();
-    // let user = {
-    //     username: this.state.username,
-    //     password: this.state.password
-    // }
     if (this.handleValidation())
     this.props.login({
         username: this.state.username,
@@ -54,36 +38,8 @@ handleSubmit = (e) => {
 
 render() {
     return (
-        // <div className="container">
-        // <div class="columns">
-        // <div className="column is-narrow-mobile">
-        // <div className="tile notification is-vertical">
-        //     <form onSubmit={this.handleSubmit}>
-        //         <label className="has-text-grey-dark"> Username:
-        //             <input
-        //                 type="text"
-        //                 name="username"
-        //                 value={this.state.username}
-        //                 onChange={this.handleChange}>
-        //             </input>
-        //         </label>
-        //         <label className="has-text-grey-dark">Password:
-        //             <input
-        //                 type="password"
-        //                 name="password"
-        //                 value={this.state.password}
-        //                 onChange={this.handleChange}>
-        //             </input>
-        //         </label>
-        //         <button className="button is-rounded is-link is-outlined" type="submit">Enter</button>
-        //     </form>
-        // </div>
-        // </div>
-        // </div>
-        // </div>
-
         <div className="container">
-        <div class="columns">
+        <div className="columns">
         <div className="column is-narrow-mobile">
         <div className="tile notification is-vertical">
             <div className="field">
@@ -118,7 +74,7 @@ render() {
         </div>
         </div>
     )
-}
+    }
 }
 
 export default Login;

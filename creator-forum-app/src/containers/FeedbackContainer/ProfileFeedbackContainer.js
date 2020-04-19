@@ -3,7 +3,6 @@ import ProfileFeedback from '../../components/Feedback/ProfileFeedback';
 import FeedbackApi from '../../api/FeedbackApi';
 import './FeedbackContainer.css';
 
-
 class ProfileFeedbackContainer extends React.Component {
 
     state = {

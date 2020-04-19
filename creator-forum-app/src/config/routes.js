@@ -39,10 +39,9 @@ const Routes = (props) => {
             <Route
                 path='/profile'
                 render={
-                    () => props.user ? // if true show profile, else login
+                    () => props.user ? // if true: show profile, else login
                         <Profile user={props.user} />
                     :
-                        // <Login login={props.login} />
                         <Redirect to='/'/>
                 }
             />
@@ -52,7 +51,6 @@ const Routes = (props) => {
                     () => props.user ? // if true show forum, else login
                         <Forum user={props.user} />
                     :
-                        // <Login login={props.login} />
                         <Redirect to='/'/>
                 }
             />
