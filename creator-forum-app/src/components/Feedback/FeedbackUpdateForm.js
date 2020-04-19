@@ -6,8 +6,6 @@ class FeedbackUpdateForm extends React.Component {
         feedback: ''
     }
 
-    // field validation
-
     onChange = (event) => {
         this.setState({
             feedback: event.target.value,
@@ -23,7 +21,6 @@ class FeedbackUpdateForm extends React.Component {
                 _id: this.props.feedback._id
             })
             .then(res => {
-                // from Upload Container which will re-render container to include new upload
                 this.props.updateFeedbackContainer();
             })
             this.setState({

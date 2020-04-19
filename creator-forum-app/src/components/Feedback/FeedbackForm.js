@@ -2,11 +2,15 @@ import React from 'react';
 import FeedbackApi from '../../api/FeedbackApi';
 
 class FeedbackForm extends React.Component {
-    // state = {
-    //     input: document.getElementsByClassName("field").value
-    // }
+    state = {
+        feedbackForm: ''
+    }
 
-    // field validation
+    onChange = (event) => {
+        this.setState({
+            feedbackForm: event.target.value,
+        })
+    }
 
     submitFeedback = (event) => {
         event.preventDefault();
@@ -22,10 +26,9 @@ class FeedbackForm extends React.Component {
                 console.log('feedback posted on backend');
                 this.props.updateFeedbackContainer();
             })
-            // this.setState({
-            //     input: document.getElementById(`${this.props.uploadId}`).value
-            // })
-            // this.clearForm();
+            this.setState({
+                feedbackForm: ''
+            })
         }
     
     // clearForm() {
@@ -39,7 +42,12 @@ class FeedbackForm extends React.Component {
             <div className="container">
                 <div className="field">
                     <div className="control">
-                        <textarea className="input has-text-black" name="body" id={this.props.uploadId} type="text" defaultValue="" />
+                        <textarea 
+                            className="input has-text-black" 
+                            name="body" id={this.props.uploadId} 
+                            type="text" onChange={this.onChange} 
+                            value={this.state.feedbackForm} 
+                            defaultValue="" />
                     </div>
                 </div>
                 <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.submitFeedback}>Give Feedback</button>

@@ -10,10 +10,8 @@ class ForumFeedback extends React.Component {
         formStyle: {
             display: 'none',
         },
-        showDelete: false,
+        showDelete: false
     }
-
-    // field validation
 
     showDeleteMessage = (event) => {
         this.setState({
