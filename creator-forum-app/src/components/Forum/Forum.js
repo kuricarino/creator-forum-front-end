@@ -59,7 +59,7 @@ class Forum extends React.Component {
                         </h2>
                     </div>
                 </div>
-                <div className="column is-narrow-mobile is-three-quarters" id="scroll">
+                <div className="column is-narrow-mobile is-three-quarters" id="forum-upload-scroll">
                     {/* <UploadContainer id={this.state.user._id}/> */}
                     <UploadContainer userId={this.props.user.id} />
                 </div>

@@ -14,8 +14,6 @@ class FeedbackForm extends React.Component {
 
     submitFeedback = (event) => {
         event.preventDefault();
-        // console.log(this.props.uploadId);
-        // if (this.validateFields()) {
             console.log(document.getElementById(`${this.props.uploadId}`).value);
             FeedbackApi.feedbackCreate({
                 body: document.getElementById(`${this.props.uploadId}`).value,
@@ -31,11 +29,6 @@ class FeedbackForm extends React.Component {
             })
         }
     
-    // clearForm() {
-    //     this.setState({
-    //         input: ''
-    //     })
-    // }
 
     render() {
         return (

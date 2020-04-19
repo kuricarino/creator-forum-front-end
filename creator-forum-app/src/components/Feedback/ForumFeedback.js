@@ -16,7 +16,6 @@ class ForumFeedback extends React.Component {
     showDeleteMessage = (event) => {
         this.setState({
             showDelete: !this.state.showDelete,
-            // editButtonStyle: !this.state.editButtonStyle
         });
     }
 
@@ -30,41 +29,26 @@ class ForumFeedback extends React.Component {
         });
     };
 
-    // for editing feedback
-    toggleBodyForm = () => {
+    toggleUpdateFeedbackForm = () => {
         this.state.formStyle.display === 'block'
         ? this.setState({ formStyle: {display: 'none' } })
         : this.setState({ formStyle: {display: 'block'} });
     }
 
-    deleteButton() {
-        console.log('deleted comment on forum clicked')
-    }
-
     render() {
-        // if (!this.props.show) {
-        //     return null;
-        // }
         if (this.props.feedback.user === this.props.loggedInUser) {
         return (
             <>
             <div className="content is-narrow-mobile" id="feedback-forum-content">
-                {/* <span className="icon is-small">
-                    <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
-                </span> */}
                 <p className="has-text-grey-dark">
                 <i className="far fa-comment" data-fa-transform="flip-h" aria-hidden="true" id="comment-bubble-icon"></i>
                 <strong> {this.props.feedback.body}</strong>
                 </p>
-                {/* <p className="has-text-black has-text-centered">
-                    <strong>{this.props.feedback.body}</strong>
-                </p> */}
                     <nav className="level is-mobile">
                         <div className="level-right">
                         <a className="level-item" aria-label="edit">
-                            <span className="icon is-small" onClick={this.toggleBodyForm} >
+                            <span className="icon is-small" onClick={this.toggleUpdateFeedbackForm} >
                             <i className="fas fa-edit" aria-hidden="true"></i>
-                            {/* <p>Edit</p> */}
                             </span>
                         </a>
                         <a className="level-item" aria-label="delete">
@@ -78,7 +62,8 @@ class ForumFeedback extends React.Component {
             <FeedbackUpdateForm 
                 feedback={this.props.feedback}
                 style={this.state.formStyle} 
-                toggleBodyForm={this.props.toggleBodyForm}
+                // showUpdateForm={this.state.showForm}
+                // toggleUpdateFeedbackForm={this.props.toggleUpdateFeedbackForm}
                 updateFeedbackContainer={this.props.updateFeedbackContainer}
             />
             <br/>
@@ -92,7 +77,6 @@ class ForumFeedback extends React.Component {
             </>
         )
         }
-        // if (this.props.upload.user._id !== this.props.loggedInUser) {
         return (
             <>
             <div className="content" id='forum-feedback'>
@@ -103,7 +87,6 @@ class ForumFeedback extends React.Component {
             </div>
             </>
         )
-        // }
     }
 }
 

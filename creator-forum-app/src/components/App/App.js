@@ -13,23 +13,23 @@ class App extends React.Component {
     user: {},
   }
 
-  componentDidMount() {
-    if (localStorage.jwtToken) {
-      setAuthHeader(localStorage.jwtToken);
-      const decoded = jwt_decode(localStorage.getItem('jwtToken'));
+componentDidMount() {
+  if (localStorage.jwtToken) {
+    setAuthHeader(localStorage.jwtToken);
+    const decoded = jwt_decode(localStorage.getItem('jwtToken'));
 
-      this.setState({
-        user: 
-        {
-          firstName: decoded.firstName,
-          lastName: decoded.lastName,
-          username: decoded.username,
-          email: decoded.email,
-          id: decoded._id 
-        },
-      })
-    }
+    this.setState({
+      user: 
+      {
+        firstName: decoded.firstName,
+        lastName: decoded.lastName,
+        username: decoded.username,
+        email: decoded.email,
+        id: decoded._id 
+      },
+    })
   }
+}
 
 register = (user) => {
   UserApi.register(user)
@@ -94,7 +94,6 @@ logout = () => {
 }
 
 render() {
-  console.log(this.state.user)
   return (
     <section className="hero is-primary is-fullheight">
       <Header 
@@ -106,7 +105,6 @@ render() {
         login={this.login}
         register={this.register}
         logout={this.logout}
-        // userRequestToDeleteProfile={this.userRequestToDeleteProfile}
       />
       <Footer />
     </section>

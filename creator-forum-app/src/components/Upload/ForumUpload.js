@@ -52,31 +52,10 @@ class ForumUpload extends React.Component {
         });
     };
 
-    // componentDidMount() {
-    //     console.log('GET feedback rendered on forum page');
-    //     FeedbackApi.feedbackIndex(this.props.upload._id)
-    //     .then(res => {
-    //             console.log(res.data);
-    //             // let feedback = res.data.filter((upload) => {
-    //             //     return upload.feedback === this.props.upload._id
-    //             // })
-    //             let feedback = res.data;
-    //             feedback.reverse();
-    //             this.setState({
-    //                 feedback: feedback,
-    //         })}
-    //     );
-    // }
-
     // user posts new feedback
     updateFeedbackContainer = () => {
-        console.log('new feedback added');
         FeedbackApi.feedbackIndex(this.props.upload._id)
         .then(res => {
-                console.log(res.data);
-                // let feedback = res.data.filter((upload) => {
-                //     return upload.feedback === this.props.upload._id
-                // })
                 let feedback = res.data;
                 feedback.reverse();
                 this.setState({
@@ -85,12 +64,8 @@ class ForumUpload extends React.Component {
         );
     }
 
-
     render () {
-        console.log(this.state.feedback)
-        // forum page
         return (
-            
             <div className="box is-narrow-mobile forum-upload-box">
                 <article className="media is-narrow-mobile">
                     <div className="media-left">
@@ -103,16 +78,15 @@ class ForumUpload extends React.Component {
                         <p className="has-text-black">
                         <strong>{this.props.upload.title}</strong>
                         <br/>
-                        {/* make this a link */}
                         <strong><a href={this.props.upload.link}>View Work</a></strong>
                         <br/>
                         {this.props.upload.body}
                         </p>
                     </div>
-                    <nav className="level is-mobile">
+                    {/* <nav className="level is-mobile">
                         <div className="level-left">
                         </div>
-                    </nav>
+                    </nav> */}
                     </div>
                 </article>
                 <br/>
@@ -121,15 +95,7 @@ class ForumUpload extends React.Component {
                     upload={this.props.upload} 
                     loggedInUser={this.props.loggedInUser} 
                 />
-                {/* {this.state.feedback && this.state.feedback.map(item => {
-                    return <FeedbackForm upload={this.props.upload} key={item._id} loggedInUser={this.props.loggedInUser}  updateFeedbackContainer={this.updateFeedbackContainer} />
-                })} */}
-                {/* {this.state.feedback && this.state.feedback.map(item => {
-                    return <FeedbackForm upload={this.props.upload} key={item._id} loggedInUser={this.props.loggedInUser} />
-                })} */}
-                {/* <UploadUpdateForm showUpdateState={this.state.showUpdate} updateUploadContainer={this.props.updateUploadContainer} onClose={this.handleCloseUpdateForm} upload={this.props.upload} editButtonStyle={this.state.editButtonStyle} /> */}
-                {/* <DeleteMessage showDeleteState={this.state.showDelete} updateUploadContainer={this.props.updateUploadContainer} onClose={this.handleCloseDeleteMessage} upload={this.props.upload}/> */}
-                </div>
+            </div>
         )
     }
 

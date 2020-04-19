@@ -3,7 +3,7 @@ import FeedbackApi from '../../api/FeedbackApi';
 
 class FeedbackUpdateForm extends React.Component {
     state = {
-        feedback: ''
+        feedback: '',
     }
 
     onChange = (event) => {
@@ -24,7 +24,7 @@ class FeedbackUpdateForm extends React.Component {
                 this.props.updateFeedbackContainer();
             })
             this.setState({
-                feedback: ''
+                feedback: '',
             })
     }
 
