@@ -10,9 +10,7 @@ class ProfileFeedbackContainer extends React.Component {
         feedback: [],
     }
 
-    // new feedback posted
     updateFeedbackContainer = () => {
-        console.log('new feedback and component should re-render');
         FeedbackApi.feedbackIndex(this.props.upload._id)
         .then(res => {
             let feedback = res.data.filter((feedback) => {
@@ -26,14 +24,10 @@ class ProfileFeedbackContainer extends React.Component {
     }
 
     componentDidMount() {
-        console.log('feedback container mounted');
-        console.log(this.props.upload._id)
         FeedbackApi.feedbackIndex(this.props.upload._id)
         .then(res => {
-            console.log(res.data);
             let feedback = res.data.filter((feedback) => {
                 return feedback.upload === this.props.upload._id
-                console.log(feedback);
             })
             feedback.reverse();
             this.setState({
@@ -46,7 +40,6 @@ class ProfileFeedbackContainer extends React.Component {
         if (!this.props.showFeedbackState) {
             return null;
         }
-        // user can only post feedback on work they DID NOT upload
         if (this.props.loggedInUser === this.props.upload.user._id) {
             return (
                 <div className="container is-narrow-mobile" id="feedback-container">

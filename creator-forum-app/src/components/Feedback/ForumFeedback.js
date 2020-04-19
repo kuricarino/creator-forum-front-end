@@ -1,8 +1,6 @@
 import React from 'react';
 import FeedbackUpdateForm from './FeedbackUpdateForm';
 import FeedbackDeleteMessage from './FeedbackDeleteMessage';
-// import FeedbackApi from '../../api/FeedbackApi';
-// import Upload from '../../components/Upload/Upload';
 import './ForumFeedback.css';
 
 class ForumFeedback extends React.Component {
@@ -62,8 +60,6 @@ class ForumFeedback extends React.Component {
             <FeedbackUpdateForm 
                 feedback={this.props.feedback}
                 style={this.state.formStyle} 
-                // showUpdateForm={this.state.showForm}
-                // toggleUpdateFeedbackForm={this.props.toggleUpdateFeedbackForm}
                 updateFeedbackContainer={this.props.updateFeedbackContainer}
             />
             <br/>

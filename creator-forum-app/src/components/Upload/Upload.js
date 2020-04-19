@@ -11,7 +11,7 @@ class Upload extends React.Component {
         feedback: {},
         showUpdate: false,
         showDelete: false,
-        showFeedback: false,
+        showFeedback: true,
         editButtonStyle: false,
         deleteButtonStyle: false,
         feedbackButtonStyle: false
@@ -24,14 +24,10 @@ class Upload extends React.Component {
     showUpdateForm = (event) => {
         this.setState({
             showUpdate: !this.state.showUpdate,
-            showDelete: this.state.showDelete,
-            showFeedback: this.state.showFeedback
-            // editButtonStyle: !this.state.editButtonStyle
         });
     };
 
     updateButton = () => {
-        console.log('edit button clicked')
         this.showUpdateForm()
     }
 
@@ -44,7 +40,6 @@ class Upload extends React.Component {
     showDeleteMessage = (event) => {
         this.setState({
             showDelete: !this.state.showDelete,
-            // editButtonStyle: !this.state.deleteButtonStyle
         });
     }
 
@@ -61,23 +56,16 @@ class Upload extends React.Component {
     showFeedback = (event) => {
         this.setState({
             showFeedback: !this.state.showFeedback,
-            // editButtonStyle: !this.state.feedbackButtonStyle
         });
     };
 
     feedbackButton = () => {
-        console.log('show feedback')
         this.showFeedback()
     }
 
     componentDidMount = () => {
-        console.log('new feedback added');
         FeedbackApi.feedbackIndex(this.props.upload._id)
         .then(res => {
-                console.log(res.data);
-                // let feedback = res.data.filter((upload) => {
-                //     return upload.feedback === this.props.upload._id
-                // })
                 let feedback = res.data;
                 feedback.reverse();
                 this.setState({
@@ -87,10 +75,6 @@ class Upload extends React.Component {
     }
 
     render () {
-        // let editButtonClass = this.state.editButtonStyle ? "icon is-small has-text-link" : "icon is-small"
-        // let deleteButtonClass = this.state.deleteButtonStyle ? "icon is-small has-text-link" : "icon is-small"
-        // let feedbackButtonClass = this.state.feedbackButtonStyle ? "icon is-small has-text-link" : "icon is-small"
-
             return (
                 <div className="box" id="profile-upload-box">
                 <article className="media">
@@ -152,7 +136,6 @@ class Upload extends React.Component {
                 </div>
             )
     }
-
 }
 
 export default Upload;

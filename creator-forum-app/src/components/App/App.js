@@ -57,7 +57,6 @@ register = (user) => {
 }
 
 login = (user) => {
-  console.log(`user log in`);
   UserApi.login(user)
   .then(res => {
     if (res.status === 200) {

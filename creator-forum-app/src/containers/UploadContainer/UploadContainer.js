@@ -1,7 +1,5 @@
 import React from 'react';
-// import { Route } from 'react-router-dom';
 import UploadApi from '../../api/UploadApi';
-import FeedbackApi from '../../api/FeedbackApi';
 import Upload from '../../components/Upload/Upload';
 import ForumUpload from '../../components/Upload/ForumUpload';
 import UploadForm from '../../components/Upload/UploadForm';
@@ -20,16 +18,13 @@ class UploadContainer extends React.Component {
     //    profile component    //
     // *********************** //
 
-    // changes + button to red (would want to have x)
     showUploadForm = (event) => {
-        console.log('show/hide blank create form')
         this.setState({
             show: !this.state.show,
-            buttonStyle: !this.state.buttonStyle
+            // buttonStyle: !this.state.buttonStyle
         });
     }
 
-    // submits and closes create form
     handleClose = (event) => {
         this.setState({
             show: !this.state.show
@@ -38,7 +33,6 @@ class UploadContainer extends React.Component {
 
     // after creating a new upload or updating an upload
     updateUploadContainer = () => {
-        console.log('UploadContainer rendered');
         UploadApi.uploadIndex()
         .then(res => {
                 let userUpload = res.data.filter((upload) => {
@@ -86,7 +80,6 @@ class UploadContainer extends React.Component {
         // let buttonClass = this.state.buttonStyle ? "icon has-text-link is-large" : "icon has-text-danger is-large"
         let uploads = this.state.uploads;
         if (this.state.pathName === '/profile') {
-            // user has no uploads
             if (uploads.length === 0) {
                 return (
                     <div className="tile notification is-flex-mobile">
@@ -95,7 +88,6 @@ class UploadContainer extends React.Component {
                             <p className="title has-text-grey-dark">Your Work</p>
                             <p className="subtitle has-text-grey-dark">Upload your work to the forum</p>
                             <span className="icon has-text-link is-large" onClick={event => this.showUploadForm()}> 
-                            {/* or use has-text-info and change submit button */}
                                 <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
                             </span>
                             <UploadForm 

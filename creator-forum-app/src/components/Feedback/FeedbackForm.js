@@ -27,8 +27,10 @@ class FeedbackForm extends React.Component {
             })
         }
     
-
     render() {
+        if (this.props.feedback.user === this.props.loggedInUser) {
+            return null;
+        }
         return (
             <div className="container">
                 <div className="field">

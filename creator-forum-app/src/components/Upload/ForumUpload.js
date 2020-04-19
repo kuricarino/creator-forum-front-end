@@ -53,16 +53,17 @@ class ForumUpload extends React.Component {
     };
 
     // user posts new feedback
-    updateFeedbackContainer = () => {
-        FeedbackApi.feedbackIndex(this.props.upload._id)
-        .then(res => {
-                let feedback = res.data;
-                feedback.reverse();
-                this.setState({
-                    feedback: feedback,
-            })}
-        );
-    }
+    // updateFeedbackContainer = () => {
+    //     console.log('running?')
+    //     FeedbackApi.feedbackIndex(this.props.upload._id)
+    //     .then(res => {
+    //             let feedback = res.data;
+    //             feedback.reverse();
+    //             this.setState({
+    //                 feedback: feedback,
+    //         })}
+    //     );
+    // }
 
     render () {
         return (
@@ -83,15 +84,11 @@ class ForumUpload extends React.Component {
                         {this.props.upload.body}
                         </p>
                     </div>
-                    {/* <nav className="level is-mobile">
-                        <div className="level-left">
-                        </div>
-                    </nav> */}
                     </div>
                 </article>
                 <br/>
                 <FeedbackContainer 
-                    updateFeedbackContainer={this.updateFeedbackContainer} 
+                    // updateFeedbackContainer={this.updateFeedbackContainer} 
                     upload={this.props.upload} 
                     loggedInUser={this.props.loggedInUser} 
                 />

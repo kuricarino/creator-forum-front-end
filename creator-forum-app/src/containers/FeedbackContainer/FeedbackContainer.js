@@ -8,9 +8,6 @@ class FeedbackContainer extends React.Component {
 
     state = {
         feedback: [],
-        // pathName: '',
-        // show: false,
-        // buttonStyle: true,
     }
 
     updateFeedbackContainer = () => {
@@ -58,7 +55,7 @@ class FeedbackContainer extends React.Component {
                 </div>
             )
         }
-        return (           
+        return (         
             <div className="container" id="feedback-container">
                 <div className="content">
                 {this.state.feedback && this.state.feedback.map(item => {
@@ -77,11 +74,13 @@ class FeedbackContainer extends React.Component {
                     feedback={this.state.feedback} 
                     uploadId={this.props.upload._id} 
                     loggedInUser={this.props.loggedInUser} 
-                    updateFeedbackContainer={this.updateFeedbackContainer} 
+                    updateFeedbackContainer={this.updateFeedbackContainer}
+                    showFeedbackForm={this.state.showFeedbackForm} 
                 />
                 </div>
             </div> 
         )
+
     }
 }
 

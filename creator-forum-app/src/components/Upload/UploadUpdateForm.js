@@ -60,7 +60,7 @@ class UploadUpdateForm extends React.Component {
                                 <div className="control">
                                     <input className="input has-text-black" name="link" id="link" type="text" defaultValue={this.props.upload.link} />
                                 </div>
-                                <p class="help has-text-grey-dark">ex. https://github.com/kuricarino/creator-forum</p>
+                                <p className="help has-text-grey-dark">ex. https://github.com/kuricarino/creator-forum</p>
                             </div>
                             <div className="field">
                                 <label className="label has-text-grey-dark">Body</label>
