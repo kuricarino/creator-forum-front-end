@@ -10,21 +10,21 @@ const About = (props) => {
             </h1>
                 <div class="tile is-ancestor">
                     <div class="tile is-parent is-8">
-                        <article class="tile is-child box">
-                        <div class="content">
+                        <article class="tile is-child box notification">
                             <p className="has-text-grey-dark has-text-left has-text-justified is-size-5">
                                 Born out of the desire to promote honest feedback, the <strong>Creator Forum</strong> is where you can post links to your work (art, music, photography, what have you). 
                                 Fellow creators can check out what you share and give non-biased feedback. 
                                 The name was inspired by the Latin word, <em>forum</em>, or "public place outdoors".
                                 Similar to the Roman Forum, this is a public space where discussion is welcome.
                             </p>
+                            <br/>
                             <p className="has-text-grey-dark has-text-left has-text-justified is-size-5"><em>Want to get opinions that aren't sugar coated?</em></p>
+                            <br/>
                             <p className="has-text-grey-dark has-text-left has-text-justified is-size-4"><strong>Time to get on the forum.</strong></p>      
-                        </div>
                         </article>
                     </div>
                     <div class="tile is-parent">
-                        <article class="tile is-child box">
+                        <article class="tile is-child box notification">
                         <div class="content">
                             <p>
                                 what to say?
