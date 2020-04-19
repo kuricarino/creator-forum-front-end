@@ -5,9 +5,7 @@ const Footer = () => {
     return (
         <div className="hero-foot">
             <div className="container">
-                <p>&copy; ⓚⓤⓡⓘ ♡</p>
-                {/* ⓚⓤⓡⓘ②⓪②⓪ */}
-                {/* ➋⓿➋⓿ */}
+                <p className="has-text-weight-semibold">&copy;ⓚⓤⓡⓘ♡</p>
             </div>
         </div>
     )

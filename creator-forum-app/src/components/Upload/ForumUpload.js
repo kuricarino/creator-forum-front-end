@@ -1,10 +1,8 @@
 import React from 'react';
-// import UploadUpdateForm from './UploadUpdateForm';
-// import DeleteMessage from './DeleteMessage';
 import FeedbackContainer from '../../containers/FeedbackContainer/FeedbackContainer';
-import FeedbackForm from '../../components/Feedback/FeedbackForm';
+// import FeedbackForm from '../../components/Feedback/FeedbackForm';
 import FeedbackApi from '../../api/FeedbackApi';
-import foryou from '../../images/icons8-for-you-120.png';
+import foryou from '../../images/for-you-120.png';
 import './ForumUpload.css';
 
 class ForumUpload extends React.Component {
@@ -93,7 +91,7 @@ class ForumUpload extends React.Component {
         // forum page
         return (
             
-            <div className="box is-narrow-mobile" id="forum-upload-box">
+            <div className="box is-narrow-mobile forum-upload-box">
                 <article className="media is-narrow-mobile">
                     <div className="media-left">
                     <figure className="image is-64x64">

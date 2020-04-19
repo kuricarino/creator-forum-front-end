@@ -1,18 +1,16 @@
 import React from 'react';
-import './Profile.css';
 import UserApi from '../../api/UserApi';
 import UploadContainer from '../../containers/UploadContainer/UploadContainer';
-import ProfileDeleteMessage from '../../components/Profile/ProfileDeleteMessage';
-import Home from '../../components/Home/Home';
+import defaultpic from '../../images/default-profile-pic.png';
+import './Profile.css';
 
 class Profile extends React.Component {
     state = {
         user: {},
-        showProfileDeleteMessage: false,
-        userDeleted: false,
+        // showProfileDeleteMessage: false,
+        // userDeleted: false,
     }
 
-    //handleValidation?
     handleValidation = () => {
         // Puts state keys in keys array
         let inputIds = ['firstName','lastName','username']
@@ -22,15 +20,7 @@ class Profile extends React.Component {
             input.classList.remove('is-danger');
             if (input.value === '') {
                 valid = false;
-                // add bulma class is-danger to fields
                 input.classList.add('is-danger');
-                // let divField = document.getElementsByClassName('field');
-                // let p = document.createElement('p');
-                // p.classList.add('help');
-                // p.classList.add('is-danger');
-                // let errorMessage = document.createTextNode('field cannot be empty');
-                // p.appendChild(errorMessage);
-                // divField.appendChild(p);
             }
         })
         return valid;
@@ -72,7 +62,6 @@ class Profile extends React.Component {
 
     // not sure if componentDidUpdate is running
     componentDidUpdate(prevProps, prevState) {
-        // console.log('componentDidUpdate');
         if (prevProps.user.id !== this.props.user.id) {
             this.setState({
                 user: this.props.user
@@ -80,7 +69,6 @@ class Profile extends React.Component {
 
             UserApi.show(this.props.user.id)
             .then(res => {
-                // console.log('componentDidUpate api call for UPDATED user');
                 this.setState({
                     user: res.data
                 })
@@ -132,7 +120,7 @@ class Profile extends React.Component {
                             {/* <div> */}
                             <h1 className="title has-text-grey-dark">Hi there, {this.state.user.username}</h1>
                                 <figure className="container image is-128x128" id="profile-photo">
-                                    <img className="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="default profile"/>
+                                    <img className="is-rounded" src={defaultpic} alt="default profile"/>
                                 </figure>
                                 <div className="field">
                                     <label className="label has-text-grey-dark">First name</label>

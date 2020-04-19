@@ -55,7 +55,7 @@ class ForumFeedback extends React.Component {
                     <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
                 </span> */}
                 <p className="has-text-grey-dark">
-                <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true" id="comment-bubble-icon"></i>
+                <i className="far fa-comment" data-fa-transform="flip-h" aria-hidden="true" id="comment-bubble-icon"></i>
                 <strong> {this.props.feedback.body}</strong>
                 </p>
                 {/* <p className="has-text-black has-text-centered">
@@ -97,9 +97,9 @@ class ForumFeedback extends React.Component {
         // if (this.props.upload.user._id !== this.props.loggedInUser) {
         return (
             <>
-            <div className="content">
+            <div className="content" id='forum-feedback'>
                 <p className="has-text-grey-dark">
-                    <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true" id="comment-bubble-icon"></i>
+                    <i className="far fa-comment" data-fa-transform="flip-h" aria-hidden="true" id="comment-bubble-icon"></i>
                     <strong> {this.props.feedback.body}</strong>
                 </p>
             </div>

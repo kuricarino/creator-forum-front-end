@@ -32,12 +32,9 @@ class ProfileFeedbackContainer extends React.Component {
         .then(res => {
             console.log(res.data);
             let feedback = res.data.filter((feedback) => {
-                // console.log(feedback);
                 return feedback.upload === this.props.upload._id
                 console.log(feedback);
             })
-            // let feedback = res.data;
-            // console.log(res);
             feedback.reverse();
             this.setState({
                 feedback: feedback,

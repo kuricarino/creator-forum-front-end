@@ -3,7 +3,7 @@ import FeedbackApi from '../../api/FeedbackApi';
 import UploadUpdateForm from './UploadUpdateForm';
 import DeleteMessage from './DeleteMessage';
 import ProfileFeedbackContainer from '../../containers/FeedbackContainer/ProfileFeedbackContainer';
-import foryou from '../../images/icons8-for-you-120.png';
+import foryou from '../../images/for-you-120.png';
 import './Upload.css';
 
 class Upload extends React.Component {
@@ -112,17 +112,17 @@ class Upload extends React.Component {
                         <div className="level-left">
                         <a className="level-item" aria-label="edit">
                             <span className="icon is-small" onClick={this.updateButton} >
-                            <i className="fas fa-edit" aria-hidden="true"></i>
+                                <i className="fas fa-edit" aria-hidden="true"></i>
                             </span>
                         </a>
                         <a className="level-item" aria-label="delete">
                             <span className="icon is-small" onClick={this.deleteButton} >
-                            <i className="fas fa-trash" aria-hidden="true"></i>
+                                <i className="fas fa-trash" aria-hidden="true"></i>
                             </span>
                         </a>
                         <a className="level-item" aria-label="comments">
                             <span className="icon is-small" onClick={this.feedbackButton}>
-                            <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
+                                <i className="fas fa-comment" data-fa-transform="flip-h" aria-hidden="true"></i>
                             </span>
                         </a>
                         </div>

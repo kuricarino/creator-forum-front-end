@@ -33,13 +33,18 @@ class DeleteMessage extends React.Component {
                     </span> */}
                     Delete this upload?
                     </p>
-                    <button className="delete is-small" onClick={() => this.onClose()} aria-label="delete"></button>
+                    {/* <button className="delete is-small" onClick={() => this.onClose()} aria-label="delete"></button> */}
                 </div>
                 <div className="message-body">
                     <span className="icon is-medium has-text-black" onClick={this.confirmDelete} >
                         {/* <i className="fas fa-check-square"></i> */}
                         {/* <p className="has-text-black">YES</p> */}
-                        <i className="fas fa-thumbs-up fa-lg"></i>
+                        <i className="fas fa-check fa-lg"></i>
+                    </span>
+                    <span className="icon is-medium has-text-black" onClick={() => this.onClose()} >
+                        {/* <i className="fas fa-check-square"></i> */}
+                        {/* <p className="has-text-black">YES</p> */}
+                        <i className="fas fa-times fa-lg"></i>
                     </span>
                 </div>
             </article>
