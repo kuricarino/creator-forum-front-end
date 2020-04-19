@@ -1,19 +1,15 @@
 import React from 'react';
 import './Forum.css'
 import UploadApi from '../../api/UploadApi';
-import FeedbackApi from '../../api/FeedbackApi';
 import UploadContainer from '../../containers/UploadContainer/UploadContainer';
 
 class Forum extends React.Component {
     state = {
         uploads: {},
         user: this.props.user,
-        // show: false,
-        // buttonStyle: true,
     }
 
     componentDidMount() {
-        console.log('GET uploads rendered on forum page');
         UploadApi.uploadIndex()
         .then(res => {
                 let allUploads = res.data;
@@ -24,20 +20,7 @@ class Forum extends React.Component {
         );
     }
 
-    // updateUploadContainer = () => {
-    //     console.log('UploadContainer rendered');
-    //     UploadApi.uploadIndex()
-    //     .then(res => {
-    //             let allUploads = res.data;
-    //             allUploads.reverse();
-    //             this.setState({
-    //                 uploads: allUploads,
-    //         })}
-    //     );
-    // }
-
     shouldComponentUpdate(nextProps, nextState) {
-        console.log(`shouldComponentUpdate invoked`)
         if (nextProps.uploads && nextProps.uploads.length !== this.props.uploads.length) {
             return false;
         }
@@ -46,9 +29,8 @@ class Forum extends React.Component {
 
     render() {
         return (
-
             <div className="container">
-                <div class="columns">
+                <div className="columns">
                 <div className="column">
                     <div className="has-text-centered">
                         <h1 className="title is-size-1 has-text-white has-text-left has-text-justified is-uppercase" id="forum">
@@ -60,13 +42,9 @@ class Forum extends React.Component {
                     </div>
                 </div>
                 <div className="column is-narrow-mobile is-three-quarters" id="forum-upload-scroll">
-                    {/* <UploadContainer id={this.state.user._id}/> */}
                     <UploadContainer userId={this.props.user.id} />
                 </div>
                 </div>
-                {/* <div className="tile is-parent is-8 notification">  
-                <UploadContainer id={this.state.user._id}/>
-                </div>   */}
             </div>
         )
     }

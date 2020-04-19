@@ -9,15 +9,11 @@ import './UploadContainer.css';
 
 class UploadContainer extends React.Component {
     state = {
-        // uploads
         uploads: this.props.uploads,
         feedback: {},
         pathName: '',
         show: false,
-        buttonStyle: true,
-        // feedback
-        // feedback: {},
-        // showFeedback: ''
+        // buttonStyle: true,
     }
 
     // *********************** //
@@ -87,8 +83,7 @@ class UploadContainer extends React.Component {
     }
 
     render() {
-        let buttonClass = this.state.buttonStyle ? "icon has-text-link is-large" : "icon has-text-danger is-large"
-        // let buttonDataTransform = this.state.buttonStyle ? "" : "rotate-90"
+        // let buttonClass = this.state.buttonStyle ? "icon has-text-link is-large" : "icon has-text-danger is-large"
         let uploads = this.state.uploads;
         if (this.state.pathName === '/profile') {
             // user has no uploads
@@ -99,7 +94,7 @@ class UploadContainer extends React.Component {
                         <div className="content">
                             <p className="title has-text-grey-dark">Your Work</p>
                             <p className="subtitle has-text-grey-dark">Upload your work to the forum</p>
-                            <span className={buttonClass} onClick={event => this.showUploadForm()}> 
+                            <span className="icon has-text-link is-large" onClick={event => this.showUploadForm()}> 
                             {/* or use has-text-info and change submit button */}
                                 <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
                             </span>
@@ -107,7 +102,8 @@ class UploadContainer extends React.Component {
                                 userId={this.props.id} 
                                 updateUploadContainer={this.updateUploadContainer} 
                                 closeUpdateForm={this.handleClose} 
-                                show={this.state.show} 
+                                show={this.state.show}
+                                buttonStyle={this.state.buttonStyle} 
                             />
                         </div>
                         </div>
@@ -127,7 +123,7 @@ class UploadContainer extends React.Component {
                             updateUploadContainer={this.updateUploadContainer}
                         />
                     })}
-                    <span className={buttonClass} onClick={event => this.showUploadForm()}>
+                    <span className="icon has-text-link is-large" onClick={event => this.showUploadForm()}>
                         <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i>
                     </span>
                     <UploadForm 
