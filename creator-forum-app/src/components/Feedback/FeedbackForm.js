@@ -14,14 +14,12 @@ class FeedbackForm extends React.Component {
 
     submitFeedback = (event) => {
         event.preventDefault();
-            console.log(document.getElementById(`${this.props.uploadId}`).value);
             FeedbackApi.feedbackCreate({
                 body: document.getElementById(`${this.props.uploadId}`).value,
                 upload: this.props.uploadId,
                 user: this.props.loggedInUser
             })
             .then(res => {
-                console.log('feedback posted on backend');
                 this.props.updateFeedbackContainer();
             })
             this.setState({
@@ -40,7 +38,7 @@ class FeedbackForm extends React.Component {
                             name="body" id={this.props.uploadId} 
                             type="text" onChange={this.onChange} 
                             value={this.state.feedbackForm} 
-                            defaultValue="" />
+                        />
                     </div>
                 </div>
                 <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.submitFeedback}>Give Feedback</button>

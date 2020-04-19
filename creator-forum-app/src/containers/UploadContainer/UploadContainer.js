@@ -55,38 +55,7 @@ class UploadContainer extends React.Component {
         );
     }
 
-    // componentDidMount() {
-    //     console.log('component did mount profile page');
-    //     const pathName = window.location.pathname;
-
-    //     UploadApi.uploadIndex()
-    //     .then(res => {
-    //         if (pathName === '/profile') {
-    //             let userUpload = res.data.filter((upload) => {
-    //                 // return upload.user._id === this.props.id
-    //             })
-    //             userUpload.reverse();
-    //             this.setState({
-    //                 uploads: userUpload,
-    //                 pathName: pathName
-    //             });
-    //         } 
-    //         else {
-    //             console.log('forum component')
-    //             let allUploads = res.data;
-    //             allUploads.reverse();
-    //             this.setState({
-    //                 uploads: allUploads,
-    //                 pathName: pathName
-    //             })
-    //             }
-            
-    //         } 
-    //     )
-    // }
-
     componentDidUpdate(prevProps, prevState) {
-        console.log('page refresh');
         if (prevProps !== this.props) { 
             
             const pathName = window.location.pathname;
@@ -104,7 +73,6 @@ class UploadContainer extends React.Component {
                 });
             } 
             else {
-                console.log('forum component')
                 let allUploads = res.data;
                 allUploads.reverse();
                 this.setState({
@@ -117,51 +85,6 @@ class UploadContainer extends React.Component {
             )
         }
     }
-
-    // componentDidMount() {
-    //     const pathName = window.location.pathname;
-
-    //     UploadApi.uploadIndex()
-    //     .then(res => {
-    //         if (pathName === '/profile') {
-    //             let userUpload = res.data.filter((upload) => {
-    //                 return upload.user._id === this.props.id
-    //             })
-    //             userUpload.reverse();
-    //             this.setState({
-    //                 uploads: userUpload,
-    //                 pathName: pathName
-    //             });
-    //         } 
-    //         else {
-    //             console.log('forum component')
-    //             let allUploads = res.data;
-    //             allUploads.reverse();
-    //             this.setState({
-    //                 uploads: allUploads,
-    //                 pathName: pathName
-    //             })
-    //             }
-            
-    //         } 
-    //         )
-    // }
-
-    // *********************** //
-    //      forum component    //
-    // *********************** //
-
-    // updateFeedbackOnForum = () => {
-    //     console.log('Feedback on Forum re-rendered');
-    //     UploadApi.uploadIndex()
-    //     .then(res => {
-    //             let allUploads = res.data;
-    //             allUploads.reverse();
-    //             this.setState({
-    //                 uploads: allUploads,
-    //         })}
-    //     );
-    // }
 
     render() {
         let buttonClass = this.state.buttonStyle ? "icon has-text-link is-large" : "icon has-text-danger is-large"
@@ -222,9 +145,7 @@ class UploadContainer extends React.Component {
         // *********************** //
         //      forum component    //
         // *********************** //
-        console.log('rendering forum page')
         return (
-        // logic for forum
             <div className="tile" id="forum-scroll">
                 <div className="container">
                 <div className="content ">
@@ -233,13 +154,8 @@ class UploadContainer extends React.Component {
                         upload={upload} 
                         key={upload._id} 
                         loggedInUser={this.props.userId} 
-                        // updateUploadsOnForum={this.updateUploadsOnForum}
                     />
                 })}
-                {/* <span className={buttonClass} onClick={event => this.showUploadForm()}> */}
-                    {/* <i className="fas fa-lg fa-plus-circle" title="Click to add a new upload" aria-hidden="true"></i> */}
-                {/* </span> */}
-                {/* <UploadForm userId={this.props.id} updateUploadContainer={this.updateUploadContainer} closeUpdateForm={this.handleClose} show={this.state.show} /> */}
                 </div>
                 </div>
             </div>

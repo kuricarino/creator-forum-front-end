@@ -14,13 +14,11 @@ class FeedbackContainer extends React.Component {
     }
 
     updateFeedbackContainer = () => {
-        console.log('new feedback and component should re-render');
         FeedbackApi.feedbackIndex(this.props.upload._id)
         .then(res => {
             let feedback = res.data.filter((feedback) => {
                 return feedback.upload === this.props.upload._id
             })
-            // feedback.reverse();
             this.setState({
                 feedback: feedback,
         })}
@@ -33,7 +31,6 @@ class FeedbackContainer extends React.Component {
             let feedback = res.data.filter((feedback) => {
                 return feedback.upload === this.props.upload._id
             })
-            // feedback.reverse();
             this.setState({
                 feedback: feedback,
         })}
