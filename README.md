@@ -53,6 +53,12 @@ This full-stack app is a feedback forum where creators can link their work as â€
     * Currently similar to IG, where users can post multiple comments
         * May lead to issues with spamming
 
+![Image of Login]
+(https://drive.google.com/file/d/1WMqMfS0PHCwH8WZOmGBAwLFmlI-HGdob/view?usp=sharing)
+
+![Image of Profile]
+(https://drive.google.com/file/d/1Ybi1Y55Tcx9dZKY7jYKDLLPhosdDtWLS/view?usp=sharing)
+
 ### Thank you
 To everyone who was part of this adventure - for your understanding, support, positivity, inspiration and motivation. 
 
