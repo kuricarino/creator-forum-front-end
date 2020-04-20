@@ -58,11 +58,13 @@ class ForumUpload extends React.Component {
                     </figure>
                     </div>
                     <div className="media-content">
-                    <div className="content">
+                    <div className="content is-size-5">
                         <p className="has-text-black">
-                        <strong>{this.props.upload.title}</strong>
+                        <strong className="is-size-4">{this.props.upload.title}</strong>
                         <br/>
-                        <strong><a href={this.props.upload.link}>View Work</a></strong>
+                        <em className="is-size-5">{this.props.upload.category}</em>
+                        <br/>
+                        <strong><a className="is-size-5" href={this.props.upload.link}>View Work</a></strong>
                         <br/>
                         {this.props.upload.body}
                         </p>

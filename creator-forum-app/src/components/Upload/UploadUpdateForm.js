@@ -52,7 +52,7 @@ class UploadUpdateForm extends React.Component {
                             <div className="field">
                                 <label className="label has-text-grey-dark">Body</label>
                                 <div className="control">
-                                    <textarea className="textarea is-small has-text-black" name="body" id="body" type="text" defaultValue={this.props.upload.body} />
+                                    <textarea className="textarea has-text-black" name="body" id="body" type="text" defaultValue={this.props.upload.body} />
                                 </div>
                             </div>
                             <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.submitUpdate}>Update</button>

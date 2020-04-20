@@ -86,7 +86,9 @@ class Upload extends React.Component {
                     <div className="media-content">
                     <div className="content">
                         <p>
-                        <strong>{this.props.upload.title}</strong>
+                        <strong>Title: </strong><em>{this.props.upload.title}</em>
+                        <br/>
+                        <strong>Category: </strong><em>{this.props.upload.category}</em>
                         <br/>
                         <strong><a className="has-text-link" id="profile-upload-link" href={this.props.upload.link}>View Work</a></strong>
                         <br/>

@@ -38,9 +38,9 @@ class ForumFeedback extends React.Component {
         return (
             <>
             <div className="content is-narrow-mobile" id="feedback-forum-content">
-                <p className="has-text-grey-dark">
+                <p className="has-text-grey-dark is-size-5">
                 <i className="far fa-comment" data-fa-transform="flip-h" aria-hidden="true" id="comment-bubble-icon"></i>
-                <strong> {this.props.feedback.body}</strong>
+                <p> {this.props.feedback.body}</p>
                 </p>
                     <nav className="level is-mobile">
                         <div className="level-right">
@@ -76,9 +76,9 @@ class ForumFeedback extends React.Component {
         return (
             <>
             <div className="content" id='forum-feedback'>
-                <p className="has-text-grey-dark">
+                <p className="has-text-grey-dark is-size-5">
                     <i className="far fa-comment" data-fa-transform="flip-h" aria-hidden="true" id="comment-bubble-icon"></i>
-                    <strong> {this.props.feedback.body}</strong>
+                    <p> {this.props.feedback.body}</p>
                 </p>
             </div>
             </>

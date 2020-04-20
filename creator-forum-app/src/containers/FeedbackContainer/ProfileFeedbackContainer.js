@@ -15,7 +15,6 @@ class ProfileFeedbackContainer extends React.Component {
             let feedback = res.data.filter((feedback) => {
                 return feedback.upload === this.props.upload._id
             })
-            feedback.reverse();
             this.setState({
                 feedback: feedback,
         })}
@@ -28,7 +27,6 @@ class ProfileFeedbackContainer extends React.Component {
             let feedback = res.data.filter((feedback) => {
                 return feedback.upload === this.props.upload._id
             })
-            feedback.reverse();
             this.setState({
                 feedback: feedback,
         })}
