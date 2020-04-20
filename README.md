@@ -44,6 +44,7 @@ This full-stack app is a feedback forum where creators can link their work as â€
 * Use of FaceBook or Google to login
 * Style edits to improve user interface design:
     * Better field validation: show help text to users (i.e. if a password is wrong, if a username is already taken)
+        * Regex
     * Better toggle style of buttons already clicked (i.e. when a user submits edits to their profile)
     * Better toggle of forms (i.e. the edit form closes if the delete button and message is displayed)
 
