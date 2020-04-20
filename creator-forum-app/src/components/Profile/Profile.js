@@ -102,7 +102,7 @@ class Profile extends React.Component {
                                     <p className="has-text-grey-dark"><i className="fas fa-envelope has-text-grey-dark"></i> {this.props.user.email}</p>
                                 </div>
                             <button className="button is-rounded is-link is-outlined" id="submit-button" onClick={this.submitUpdate}>Save Changes</button>
-                            </div>
+                        </div>
                 </div>
                 <div className="column is-7">
                     <UploadContainer id={this.state.user._id}/>
