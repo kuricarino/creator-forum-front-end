@@ -50,7 +50,7 @@ This full-stack app is a feedback forum where creators can link their work as â€
 
 ## Known Issues / Things to Consider
 * User login, sign up, and profile forms outline missing fields in red, but does not undo red outline once a user starts typing
-* Feedback form for an edit not close on submit - what if user wants to edit their feedback more than once?
+* Feedback form for an edit does not close on submit - what if user wants to edit their feedback more than once?
     * Currently similar to IG, where users can post multiple comments
         * May lead to issues with spamming
 
