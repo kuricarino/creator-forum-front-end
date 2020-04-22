@@ -2,7 +2,11 @@
 
 This full-stack app is a feedback forum where creators can link their work as “uploads”. Fellow users can then give “feedback” on work through comments on the forum page. Currently, usernames are never displayed, so everyone can remain anonymous while uploading and giving feedback. This allows users in the forum to feel more open to be constructive with their critique, and for uploaders to get unbiased feedback on work they find subjective. Creators can vary from artists, photographers, designers and or full-stack engineers. Anyone who has a link to their work and craves honest feedback is encouraged to join.
 
-<img src="https://imgur.com/a/RDeNOvG">
+<a href="https://drive.google.com/file/d/1h1XQiBn9VYzdjgt3wMPq_L5h8gaFLL29/view?usp=sharing">Creator Forum Landing<a/>
+
+<a href="https://drive.google.com/file/d/1rvbk-BQQ1BSCHCblAxlanwFkDDXY2yyI/view?usp=sharing">Profile View<a/>
+
+<a href="https://drive.google.com/file/d/14BBpPz5h4WSD_35Fo8IpxjvXZsxR5Dyl/view?usp=sharing">Forum View<a/>
 
 ## Technologies Used
 
