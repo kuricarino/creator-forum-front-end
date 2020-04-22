@@ -16,6 +16,8 @@ This full-stack app is a feedback forum where creators can link their work as â€
 * React
 * Node.js
 
+<a href="https://github.com/kuricarino/creator-forum-back-end/tree/kris">Backend GitHub Repo<a/>
+
 **Necessary Dependencies**
 * bcryptjs
 * mongoose
