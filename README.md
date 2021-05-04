@@ -4,13 +4,21 @@ This full-stack app is a feedback forum where creators can link their work as â€
 
 <a href="https://drive.google.com/file/d/1BjXUKijvrYSfrI6SST4d1joGpbl8LB_B/view?usp=sharing">Creator Forum Demo Video<a/>
    
-## Image Links
+## Images
 
-<a href="https://drive.google.com/file/d/1h1XQiBn9VYzdjgt3wMPq_L5h8gaFLL29/view?usp=sharing">Creator Forum Landing<a/>
+<a href="https://user-images.githubusercontent.com/58093608/116963961-1b9bd480-ac5f-11eb-9560-a138ae87a1ec.png">Creator Forum Landing<a/>
+   
+![Creator Forum Landing](https://user-images.githubusercontent.com/58093608/116963961-1b9bd480-ac5f-11eb-9560-a138ae87a1ec.png)
 
-<a href="https://drive.google.com/file/d/1rvbk-BQQ1BSCHCblAxlanwFkDDXY2yyI/view?usp=sharing">Profile View<a/>
 
-<a href="https://drive.google.com/file/d/14BBpPz5h4WSD_35Fo8IpxjvXZsxR5Dyl/view?usp=sharing">Forum View<a/>
+<a href="https://user-images.githubusercontent.com/58093608/116964126-9c5ad080-ac5f-11eb-8c31-0b3ea49d34ee.png">Profile View<a/>
+   
+![Profile View](https://user-images.githubusercontent.com/58093608/116964126-9c5ad080-ac5f-11eb-8c31-0b3ea49d34ee.png)
+
+
+<a href="https://user-images.githubusercontent.com/58093608/116964213-d330e680-ac5f-11eb-8703-ab68d9f0b9a9.png">Forum View<a/>
+   
+![Forum View](https://user-images.githubusercontent.com/58093608/116964213-d330e680-ac5f-11eb-8703-ab68d9f0b9a9.png)
 
 ## Technologies Used
 
@@ -19,8 +27,7 @@ This full-stack app is a feedback forum where creators can link their work as â€
 * Express
 * React
 * Node.js
-
-<a href="https://github.com/kuricarino/creator-forum-back-end/tree/kris">Backend GitHub Repo<a/>
+* <a href="https://github.com/kuricarino/creator-forum-back-end/tree/kris">Backend repo<a/>
 
 **Necessary Dependencies**
 * bcryptjs
@@ -32,9 +39,9 @@ This full-stack app is a feedback forum where creators can link their work as â€
 **Front-end Framework**
 * Bulma CSS
 
-### <a href="https://drive.google.com/file/d/1fXJ85V6RJ8fKuHJrtsnShuBMiou8qo-U/view?usp=sharing">Wireframes</a>
+### <a href="https://user-images.githubusercontent.com/58093608/116964472-78e45580-ac60-11eb-95ee-aef7a9bb3afe.jpg">Wireframe: Paper Prototype</a>
 
-### <a href="https://drive.google.com/file/d/1b8J5DdnNpFwXCw6q6BKJn59bfXIzREeQ/view?usp=sharing">ERD</a>
+### <a href="https://user-images.githubusercontent.com/58093608/116964865-60c10600-ac61-11eb-9736-6638c4e579e7.jpeg">ERD</a>
 
 ### User Story
 1. On the landing page, if they have not already, a user can sign-up for the Creator Forum through navigating to the Sign Up page. After signing-up or logging in, they are redirected to their Profile page.
